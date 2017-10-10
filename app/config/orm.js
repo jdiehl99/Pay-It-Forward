@@ -145,14 +145,14 @@ var orm = {
      */
     matchingLoanData: function (cb) {
 
-        var queryString = "SELECT donor_name, first_name, charity_name, loan_id";
-        queryString += " FROM user_table as a";
-        queryString += " INNER JOIN loans_table as b";
-        queryString += " ON a.id = b.userid";
-        queryString += " INNER JOIN donors_table as c";
-        queryString += " ON b.donorid = c.id";
-        queryString += " INNER JOIN charity_table as d";
-        queryString += " ON b.charityid = d.id";
+        var queryString = "SELECT d.first_name as donor_id, u.first_name as user_id, charity_name, l.id as loan_id";
+        queryString += " FROM user_table as u";
+        queryString += " INNER JOIN loans_table as l";
+        queryString += " ON u.id = l.userid";
+        queryString += " INNER JOIN donors_table as d";
+        queryString += " ON l.donorid = d.id";
+        queryString += " INNER JOIN charity_table as c";
+        queryString += " ON l.charityid = c.id";
 
         // mysql connection
         connection.query(queryString, function (err, result) {
