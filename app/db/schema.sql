@@ -16,12 +16,12 @@ CREATE TABLE user_table(
 );
 
 CREATE TABLE loans_table(
-    loanid INT (11) AUTO_INCREMENT NOT NULL,
+    loan_id INT (11) AUTO_INCREMENT NOT NULL,
     userid INT (11),
     donorid INT (11),
     charityid INT (11),
     completed DATE,
-    PRIMARY KEY (loanid)
+    PRIMARY KEY (loan_id)
 );
 
 
