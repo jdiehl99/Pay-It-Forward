@@ -65,8 +65,8 @@ var orm = {
     /**
      * Insert new data into specified table.
      * @param {string} table - table name.
-     * @param {string} cols - column names. 
-     * @param {string} vals - new values.
+     * @param {string} cols - column names must be entered in an array []. 
+     * @param {string} vals - new values must be entered in an array [].
      * @param {function} cb - function(result).
      */
     create: function (table, cols, vals, cb) {
@@ -164,4 +164,7 @@ var orm = {
 
     }
 };
-module.exports = ormExport;
+
+
+
+module.exports = orm;
