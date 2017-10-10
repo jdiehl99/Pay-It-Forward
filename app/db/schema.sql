@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS payForward_db;
-CREATE DATABASE payForward_db;
+DROP DATABASE IF EXISTS payForward_test;
+CREATE DATABASE payForward_test;
 
-USE payForward_db;
+USE payForward_test;
 
 CREATE TABLE user_table(
     id INT (11) AUTO_INCREMENT NOT NULL,
@@ -16,19 +16,19 @@ CREATE TABLE user_table(
 );
 
 CREATE TABLE loans_table(
-    id INT (11) AUTO_INCREMENT NOT NULL,
+    loanid INT (11) AUTO_INCREMENT NOT NULL,
     userid INT (11),
     donorid INT (11),
     charityid INT (11),
     completed DATE,
-    PRIMARY KEY (ID)
+    PRIMARY KEY (loanid)
 );
 
 
 CREATE TABLE donors_table (
     id INT (11) AUTO_INCREMENT NOT NULL,
-    first_name VARCHAR (255) NOT NULL,
-    last_name VARCHAR (255) NOT NULL,
+    donor_name VARCHAR (255) NOT NULL,
+    donor_last_name VARCHAR (255) NOT NULL,
     email VARCHAR (255) NOT NULL,
     anonymous BOOLEAN DEFAULT false,
     created DATETIME NOT NULL,
@@ -41,5 +41,4 @@ CREATE TABLE charity_table(
     overview LONGTEXT,
     PRIMARY KEY(id)
 );
-
 
