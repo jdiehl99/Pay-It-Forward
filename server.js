@@ -12,7 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Set ejs.
 var ejs = require("ejs");
+var expressLayouts = require('express-ejs-layouts');
 
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
 // Import routes and give the server access to them.
 var routes = require("./app/controllers/payitforward_controller.js");
 
