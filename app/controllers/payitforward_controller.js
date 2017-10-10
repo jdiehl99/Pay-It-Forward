@@ -6,7 +6,7 @@ var router = express.Router();
 
 // Route to go to home page
 router.get("/", function(req, res) {
-
+    res.render("index")
 });
 
 // Route to user page
