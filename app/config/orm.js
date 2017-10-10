@@ -3,88 +3,97 @@ var connection = require("../config/connection.js");
 // Helper function for SQL syntax.
 function printQuestionMarks(num) {
     var arr = [];
-  
+
     for (var i = 0; i < num; i++) {
-      arr.push("?");
+        arr.push("?");
     }
-  
+
     return arr.toString();
-  }
+}
 // END printQuestionMarks ____
 
-  // Helper function to convert object key/value pairs to SQL syntax
+// Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
     var arr = [];
-  
-   
-    for (var key in ob) {
-      var value = ob[key];
-      
-      if (Object.hasOwnProperty.call(ob, key)) {
-     
-        if (typeof value === "string" && value.indexOf(" ") >= 0) {
-          value = "'" + value + "'";
-        }
-  
-        arr.push(key + "=" + value);
-      }
-    }
-  
-    return arr.toString();
-  }
-  // END objToSql ____
 
-  var orm = {
-      all: function(tableName, cb){
-          
+
+    for (var key in ob) {
+        var value = ob[key];
+
+        if (Object.hasOwnProperty.call(ob, key)) {
+
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                value = "'" + value + "'";
+            }
+
+            arr.push(key + "=" + value);
+        }
+    }
+
+    return arr.toString();
+}
+// END objToSql ____
+
+// Select all from specified table in mysql.
+var orm = {
+    all: function (tableName, cb) {
+
         var queryString = "SELECT * FROM " + tableName + ";"
-        connection.query(queryString, function(err, result){
-                if(err){
-                    throw err;
-                }
+
+        // mysql connection
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
             cb(result);
         });
-      },
+    },
 
-      create: function(table, cols, vals, cb){
-          var queryString = "INSERT INTO " + table;
+    //Insert new data into specified table.
+    create: function (table, cols, vals, cb) {
+        var queryString = "INSERT INTO " + table;
 
-          queryString += " (";
-          queryString += cols.toString();
-          queryString += ") ";
-          queryString += "VALUES (";
-          queryString += printQuestionMarks(vals.length);
-          queryString += ") ";
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
 
-          console.log(queryString);
+        console.log(queryString);
 
-          connection.query(queryString, vals, function(err, result){
-                if(err){
-                    throw err;
-                }
+        // mysql connection
+        connection.query(queryString, vals, function (err, result) {
+            if (err) {
+                throw err;
+            }
             cb(result);
-          })
-      },
+        })
+    },
 
-      update : function(table, objColVals, condition, cb){
-          var queryString = "UPDATE " + table;
+    // Update data in specified table 
+    update: function (table, objColVals, condition, cb) {
 
-          queryString += " SET ";
-          queryString += objToSql(objColVals);
-          queryString += " WHERE ";
-          queryString += condition; 
+        var queryString = "UPDATE " + table;
 
-          console.log(queryString);
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
 
-          connection.query(queryString, function(err, result){
-                if(err){
-                    throw err;
-                }
+        console.log(queryString);
+
+        // mysql connection
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
             cb(result);
-          });
-      },
+        });
+    },
 
-      delete: function(table, id , cb){
+    // Delete row from specified table.
+    delete: function (table, id, cb) {
 
         var queryString = "DELETE FROM " + table;
 
@@ -92,15 +101,34 @@ function objToSql(ob) {
         queryString += "id= ";
         queryString += id;
 
-        connection.query(queryString, function(err, result){
-            if (err){
+        // mysql connection
+        connection.query(queryString, function (err, result) {
+            if (err) {
                 throw err;
             }
             cb(result);
         })
-      }
+    },
 
+    //Return all data from other tables that match the loan. 
+    matchingLoanId: function (cb) {
 
+        var queryString = "SELECT donor_name, first_name, charity_name, loanid";
+        queryString += " FROM user_table as a";
+        queryString += " INNER JOIN loans_table as b";
+        queryString += " ON a.id = b.userid";
+        queryString += " INNER JOIN donors_table as c";
+        queryString += " ON b.donorid = c.id";
+        queryString += " INNER JOIN charity_table as d";
+        queryString += " ON b.charityid = d.id";
 
-      }
+        // mysql connection
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
 
+    }
+};
