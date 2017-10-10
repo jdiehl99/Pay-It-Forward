@@ -37,6 +37,12 @@
 
   };
 
+  function fbLogout() {
+    FB.logout(function(response) {
+      // user is now logged out
+    });
+  }
+
 
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -59,9 +65,6 @@
     console.log('Name: ' + response.email);
     console.log('Name: ' + response.picture);
 
-    FB.logout(function(response) {
-      // user is now logged out
-    });
   }
 
 function onSignIn(googleUser) {
