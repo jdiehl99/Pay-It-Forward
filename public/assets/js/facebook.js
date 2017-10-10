@@ -59,13 +59,20 @@
 
   function testAPI(response) {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
+
+    FB.api('/me', {fields: 'name,email,first_name,last_name,picture'}, function(response) {
+      console.log(response);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    console.log("Response",response);
-    console.log('First Name: ' + response.first_name);
-    console.log('Last Name: ' + response.last_name);
-    console.log('Email: ' + response.email);
-    console.log('Picture: ' + response.picture);
-  });
+            'Thanks for logging in, ' + response.name + '!';
+    });
+
+  //   FB.api('/me', function(response) {
+  //     document.getElementById('status').innerHTML =
+  //       'Thanks for logging in, ' + response.name + '!';
+  //   console.log("Response",response);
+  //   console.log('First Name: ' + response.first_name);
+  //   console.log('Last Name: ' + response.last_name);
+  //   console.log('Email: ' + response.email);
+  //   console.log('Picture: ' + response.picture);
+  // });
   }
