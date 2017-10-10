@@ -164,3 +164,4 @@ var orm = {
 
     }
 };
+module.exports = ormExport;
