@@ -11,7 +11,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Set ejs.
-var expejs = require("ejs");
+var ejs = require("ejs");
 
 // Import routes and give the server access to them.
 var routes = require("./app/controllers/payitforward_controller.js");
