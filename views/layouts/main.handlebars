@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="assets/js/facebook.js"></script>
     <title>Pay it Forward</title>
 </head>
 <body>
 <h1>Pay it Forward</h1>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
     {{{body}}}
 </body>
 </html>
