@@ -15,7 +15,6 @@
     }
   }
 
-
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
@@ -38,6 +37,7 @@
 
   };
 
+
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -58,6 +58,10 @@
     console.log('Name: ' + response.last_name);
     console.log('Name: ' + response.email);
     console.log('Name: ' + response.picture);
+
+    FB.logout(function(response) {
+      // user is now logged out
+    });
   }
 
 function onSignIn(googleUser) {
@@ -68,4 +72,11 @@ function onSignIn(googleUser) {
   console.log('Family Name: ' + profile.getFamilyName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
+}
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
 }
