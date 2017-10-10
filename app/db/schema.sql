@@ -8,10 +8,10 @@ CREATE TABLE user_table(
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    loan_amt FLOAT (5,2) NOT NULL,
-    user_story LONGTEXT NOT NULL,
+    loan_amt FLOAT (5,2),
+    user_story LONGTEXT,
     user_img VARCHAR (255),
-    created DATETIME NOT NULL,
+    created DATETIME,
     PRIMARY KEY (id)
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE donors_table (
     last_name VARCHAR (255) NOT NULL,
     email VARCHAR (255) NOT NULL,
     anonymous BOOLEAN DEFAULT false,
-    created DATETIME NOT NULL,
+    created DATETIME,
     PRIMARY KEY (id)
 );
 

@@ -11,7 +11,7 @@ if(process.env.JAWSDB_URL) {
         root: 3000,
         host: "localhost",
         user: "root",
-        password: dbpassword,
+        password: "",
         database: "payForward_db",
     });
 };
