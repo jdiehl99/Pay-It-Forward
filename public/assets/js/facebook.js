@@ -7,7 +7,7 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
+      testAPI(response);
     } else {
       // The person is not logged into your app or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -57,7 +57,7 @@
   }(document, 'script', 'facebook-jssdk'));
 
 
-  function testAPI() {
+  function testAPI(response) {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       document.getElementById('status').innerHTML =
