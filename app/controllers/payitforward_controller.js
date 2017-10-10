@@ -17,4 +17,9 @@ router.get("/user", function(req, res) {
 router.get("/donor", function(req, res) {
 
 });
+
+// temp facebook
+router.get("/facebook", function(req, res) {
+    res.sendFile("/facebook.html")
+});
 module.exports = router;
