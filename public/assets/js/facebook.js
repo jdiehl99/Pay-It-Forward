@@ -62,11 +62,10 @@
     FB.api('/me', function(response) {
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
-    });
     console.log("Response",response);
     console.log('First Name: ' + response.first_name);
     console.log('Last Name: ' + response.last_name);
     console.log('Email: ' + response.email);
     console.log('Picture: ' + response.picture);
-
+  });
   }
