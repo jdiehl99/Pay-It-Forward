@@ -91,9 +91,9 @@ var orm = {
     },
 
     /**
-     * Update data in specified table.
+     * Update data in specified table, please note add a space to the values in the obj.
      * @param {string} table - table name.
-     * @param {obj} objColVals - object with column names as properties and then new values. 
+     * @param {obj} objColVals - object with column names as properties and then add space new values. 
      * @param {string} condition - EX var condition = "id = " + req.params.id.
      * @param {function} cb - function(result).
      */

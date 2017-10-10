@@ -4,6 +4,10 @@ var orm = require("../config/orm.js")
 
 var user = {
 
+    /** 
+     * Returns all data from the user.
+     * @param {function} cb - function(result).
+     */
     all: function (cb) {
         orm.all("user_table", function (result) {
 
@@ -21,9 +25,10 @@ var user = {
         })
     },
 
-    /**
-     * @param {Object} objColVals - object with columns as properties.
-     * @param {variable} condition - var condition = "id = " + req.params.id.
+   /**
+     * Update data in specified table, please note add a space to the values in the obj.
+     * @param {obj} objColVals - object with column names as properties and then add space new values. 
+     * @param {string} condition - EX var condition = "id = " + req.params.id.
      * @param {function} cb - function(result).
      */
     update: function (objColVals, condition, cb) {
