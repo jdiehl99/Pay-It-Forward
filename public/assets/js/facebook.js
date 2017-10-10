@@ -38,8 +38,12 @@
   };
 
   function fbLogout() {
-    FB.logout(function(response) {
-      // user is now logged out
+    FB.getLoginStatus(function(response) {
+        if (response && response.status === 'connected') {
+            FB.logout(function(response) {
+                document.location.reload();
+            });
+        }
     });
   }
 
