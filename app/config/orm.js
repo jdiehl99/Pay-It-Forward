@@ -113,7 +113,7 @@ var orm = {
     //Return all data from other tables that match the loan. 
     matchingLoanData: function (cb) {
 
-        var queryString = "SELECT donor_name, first_name, charity_name, loanid";
+        var queryString = "SELECT donor_name, first_name, charity_name, loan_id";
         queryString += " FROM user_table as a";
         queryString += " INNER JOIN loans_table as b";
         queryString += " ON a.id = b.userid";
