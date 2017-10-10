@@ -21,4 +21,6 @@ var routes = require("./app/controllers/payitforward_controller.js");
 
 app.use("/", routes);
 
-app.listen(PORT);
+app.listen(PORT, function() {
+    console.log("app listening on PORT " + PORT);
+});
