@@ -1,6 +1,9 @@
 var connection = require("../config/connection.js");
 
-// Helper function for SQL syntax.
+/** 
+ * Helper function to get # of question marks for SQL syntax.
+ * @param {number} num - vals.length.
+ */
 function printQuestionMarks(num) {
     var arr = [];
 
@@ -12,7 +15,10 @@ function printQuestionMarks(num) {
 }
 // END printQuestionMarks ____
 
-// Helper function to convert object key/value pairs to SQL syntax
+/** 
+ * Helper function to convert object key/value pairs to SQL syntax.
+ * @param {object} ob - objColVals. 
+ */
 function objToSql(ob) {
     var arr = [];
 
@@ -36,8 +42,14 @@ function objToSql(ob) {
 
 // Select all from specified table in mysql.
 var orm = {
-    all: function (tableName, cb) {
 
+
+    /** 
+     * Returns all data from the table name passed.
+     * @param {string} tableName - The table you want to select.
+     * @param {function} cb - function(result).
+     */
+    all: function (tableName, cb) {
         var queryString = "SELECT * FROM " + tableName + ";"
 
         // mysql connection
@@ -47,9 +59,16 @@ var orm = {
             }
             cb(result);
         });
+
     },
 
-    //Insert new data into specified table.
+    /**
+     * Insert new data into specified table.
+     * @param {string} table - table name.
+     * @param {string} cols - column names. 
+     * @param {string} vals - new values.
+     * @param {function} cb - function(result).
+     */
     create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
@@ -71,7 +90,13 @@ var orm = {
         })
     },
 
-    // Update data in specified table 
+    /**
+     * Update data in specified table.
+     * @param {string} table - table name.
+     * @param {obj} objColVals - object with column names as properties and then new values. 
+     * @param {string} condition - EX var condition = "id = " + req.params.id.
+     * @param {function} cb - function(result).
+     */
     update: function (table, objColVals, condition, cb) {
 
         var queryString = "UPDATE " + table;
@@ -91,8 +116,12 @@ var orm = {
             cb(result);
         });
     },
-
-    // Delete row from specified table.
+    /**
+     * Delete row from specified table.
+     * @param {string} table - table name.
+     * @param {number} id - id you want to delete. 
+     * @param {function} cb - function(result).
+     */
     delete: function (table, id, cb) {
 
         var queryString = "DELETE FROM " + table;
@@ -110,7 +139,10 @@ var orm = {
         })
     },
 
-    //Return all data from other tables that match the loan. 
+    /**
+     * Return all data from other tables that match the loan.
+     * @param {function} cb - function(result).
+     */
     matchingLoanData: function (cb) {
 
         var queryString = "SELECT donor_name, first_name, charity_name, loan_id";
