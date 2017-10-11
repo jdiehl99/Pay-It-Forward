@@ -71,7 +71,7 @@ var user = {
     }, 
 
     rand: function(randNum, cb){
-        orm:rand("user_table", randNum, function(result){
+        orm.rand("user_table", randNum, function(result){
             cb(result);
         });
     }
