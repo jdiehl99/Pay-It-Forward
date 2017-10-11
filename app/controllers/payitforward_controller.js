@@ -107,34 +107,34 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 router.post("/login", function (req, res) {
     // console.log(req.body)
+    alert(req.body)
+    // user.setDashboardId(req.body.email, function (userResult) {
 
-    user.setDashboardId(req.body.email, function (userResult) {
+    //     // console.log("Yomomma", userResult[0]) 
 
-        // console.log("Yomomma", userResult[0]) 
+    //     if (userResult[0] == undefined) {
 
-        if (userResult[0] == undefined) {
+    //         donor.setDashboardId(req.body.email, function (donorResult) {
 
-            donor.setDashboardId(req.body.email, function (donorResult) {
+    //             console.log("check donor ", donorResult[0])
 
-                console.log("check donor ", donorResult[0])
+    //             if (donorResult[0] == undefined) {
 
-                if (donorResult[0] == undefined) {
+    //                 res.redirect("/signup");
 
-                    res.redirect("/signup");
+    //             } else {
 
-                } else {
+    //                 res.redirect("/donor/dashboard/" + donorResult[0].id);
 
-                    res.redirect("/donor/dashboard/" + donorResult[0].id);
+    //             }
+    //         })
 
-                }
-            })
+    //     } else {
 
-        } else {
+    //         res.redirect("/user/dashboard/" + userResult[0].id);
+    //     }
 
-            res.redirect("/user/dashboard/" + userResult[0].id);
-        }
-
-    })
+    // })
 
 })
 
