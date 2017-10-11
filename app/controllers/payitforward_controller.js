@@ -86,7 +86,7 @@ donor.allIdInfo(donorId, function(donorResult){
 charity.all(function(charityResult){
 
     user.all(function(userResults){
-        res.render("donor_dashboard",{donor: donorResult, charity: charityResults, user: userResults})
+        res.render("donor_dashboard",{donor: donorResult, charity: charityResult, user: userResults})
     })
 })
 
