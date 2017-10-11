@@ -68,7 +68,14 @@ var user = {
         orm.allIdInfo("user_table", id, function(result){
             cb(result);
         })
+    }, 
+
+    rand: function(randNum, cb){
+        orm:rand("user_table", randNum, function(result){
+            cb(result);
+        });
     }
+
 
 }
 
