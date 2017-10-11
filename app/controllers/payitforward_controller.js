@@ -106,7 +106,7 @@ router.get("/donor/dashboard/:id", function (req, res) {
 // Route to login 
 
 router.get("/login", function(req,res){
-    
+    res.send("Hi")
 })
 
 router.post("/login", function (req, res) {
