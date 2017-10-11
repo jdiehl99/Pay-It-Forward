@@ -105,7 +105,7 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 // Route to login 
 
-router.post("/login", function (req, res) {
+router.get("/login", function (req, res) {
     //nsole.log(req.body)s
 
     user.setDashboardId(req.body.email, function (userResult) {
