@@ -45,7 +45,7 @@
                         <div>
                             Sign up as doner?
                             <br>
-                        <input id="toggle-event" type="checkbox" data-toggle="toggle" data-on="Doner" data-off="Recipient">
+                            <input id="toggle-event" type="checkbox" data-toggle="toggle" data-on="Doner" data-off="Recipient">
 
                             <label class="checkbox-inline anonyInput">
                                     <input type="checkbox" id="anony" checked data-toggle="toggle"> Stay Anonymous?
@@ -84,7 +84,7 @@
                         <div class="control-group hideShow">
                             <div class="form-group floating-label-form-group controls">
                                 <label>Loan Amout</label>
-                                <input class="form-control" id="loanAmout" type="tel" placeholder="100.00" required data-validation-required-message="Please enter how much you need?.">
+                                <input class="form-control" id="loanAmout" type="tel" placeholder="100 only round number please" required data-validation-required-message="Please enter how much you need?.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="control-group hideShow">
                             <div class="form-group floating-label-form-group controls">
                                 <label>Please tell us why you need the loan?</label>
-                                <textarea class="form-control" name="history" id="message" rows="5" placeholder="Why do you need help?" required data-validation-required-message="Please enter a message."></textarea>
+                                <textarea class="form-control" name="history" id="message" rows="5" placeholder="This field is required" required data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -108,8 +108,6 @@
             </div>
         </div>
     </section>
-
-
 
 </body>
 <script>
@@ -129,84 +127,145 @@
         });
 
         // the donor is anonymous by default
-         var anony=1;
-        $("#anony").change(function() {
+        var anony = 1;
+        $("#anony").change(function () {
             if (!$(this).prop('checked')) {
-                anony=0;
-            } 
+                anony = 0;
+            }
         })
 
 
-        
+
 
 
         $("#sendInfo").on("click", function (event) {
             // Make sure to preventDefault on a submit event.
             event.preventDefault();
-            if($("#toggle-event").prop('checked')){
-
-            var newDoner = {
-                first_name: $("#firstName").val().trim(),
-                last_name: $("#lastName").val().trim(),
-                email:$("#email").val().trim(), 
-                anonymous: anony,
-            };
-
-            console.log(newDoner);
-
-            // Send the POST request.
-            $.ajax("/doner/signup", {
-                type: "POST",
-                data: newDoner
-            }).then(
-                function () {
-                    console.log("created new doner");
-                    // Reload the page to get the updated list
-                    location.reload();
-                });
+            if ($("#toggle-event").prop('checked')) {
 
 
-            }else{
-        console.log("you are user");
+                var Firstname = $("#firstName").val().trim();
+                var Lastname = $("#lastName").val().trim();
+                var email = $("#email").val().trim();
 
-        var newUser = {
-                first_name: $("#firstName").val().trim(),
-                last_name: $("#lastName").val().trim(),
-                email:$("#email").val().trim(),
-                loan_amt: $("#loanAmout").val().trim(),
-                user_story: $("#message").val()//.trim() 
-                // user_img:
-            };
+                if (validateChar(Firstname) && validateChar(Lastname) && valEmail(email)) {
 
-            console.log(newUser);
 
-                // Send the POST request.
-            $.ajax("/user/signup", {
-                type: "POST",
-                data: newUser
-            }).then(
-                function () {
-                    console.log("created new user");
-                    // Reload the page to get the updated list
-                    location.reload();
-                });
+                    var newDoner = {
+                        first_name: Firstname,
+                        last_name: Lastname,
+                        email: email,
+                        anonymous: anony,
+                    };
 
-          }
+                    console.log(newDoner);
 
+                    // Send the POST request.
+                    $.ajax("/doner/signup", {
+                        type: "POST",
+                        data: newDoner
+                    }).then(
+                        function () {
+                            console.log("created new doner");
+                            // Reload the page to get the updated list
+                            location.reload();
+                        });
+                }
+
+            } else {
+                console.log("you are user");
+
+
+                var Firstname = $("#firstName").val().trim();
+                var Lastname = $("#lastName").val().trim();
+                var email = $("#email").val().trim();
+                var loan = $("#loanAmout").val().trim();
+                var userStory = $("#message").val().trim();
+
+                if (validateChar(Firstname) && validateChar(Lastname) && valEmail(email) && valNumb(
+                        loan) && (userStory !== "")) {
+
+
+
+                    var newUser = {
+                        first_name: Firstname,
+                        last_name: Lastname,
+                        email: email,
+                        loan_amt: loan,
+                        user_story: userStory
+                        // user_img:
+                    };
+
+                    console.log(newUser);
+
+                    // Send the POST request.
+                    $.ajax("/user/signup", {
+                        type: "POST",
+                        data: newUser
+                    }).then(
+                        function () {
+                            console.log("created new user");
+                            // Reload the page to get the updated list
+                            location.reload();
+                        });
+
+                }
+            }
 
         });
 
 
-  
+        function valEmail(email) {
+
+            if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                return true;
+            }
+            alert("That is not a valid email address");
+            return false;
+        }
+
+
+        function valNumb(loanN) {
+
+            if (/^\d+$/.test(loanN)) {
+                return true;
+            }
+            
+            alert("Please re-enter loan amount");
+
+            return false;
+        }
+
+
+
+        function validateChar(term) {
+            if (term == "") {
+
+                alert("Please fill the required fields");
+
+                return false;
+            }
+            if (/!^[a-zA-Z]*$/g.test(term)) {
+
+                alert("Invalid characters");
+                return false;
+            }
+            return true;
+        }
+
+
+
+
+
+
+
+
+
+
 
 
 
     });
-
-    
-
-
-
 </script>
 
 </html>
