@@ -124,7 +124,7 @@ router.post("/login", function (req, res) {
 
                 } else {
 
-                    res.send("hello from hawaii")
+                    res.send(req.body.email)
 
                     // res.redirect("/donor/dashboard/" + donorResult[0].id);
 
