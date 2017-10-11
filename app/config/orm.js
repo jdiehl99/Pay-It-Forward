@@ -209,7 +209,17 @@ var orm = {
             cb(result);
         });
 
-    }
+    },
+
+    rand: function(tableName , randNum, cb){
+        
+                var queryString  = "SELECT * from " + tableName;  
+                    queryString += " ORDER BY RAND() LIMIT " + randNum;
+        
+                    connection.query(queryString, function(result){
+                        cb(result);
+                    })
+            }
 
 };
 

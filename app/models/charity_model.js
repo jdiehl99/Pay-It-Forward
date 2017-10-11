@@ -61,8 +61,15 @@ var charity = {
     allIdInfo: function (id, cb) {
         orm.allIdInfo("charity_table", id, function(result){
             cb(result);
-        })
+        });
+    },
+
+    rand: function(randNum, cb){
+        orm:rand("charity_table", randNum, function(result){
+            cb(result);
+        });
     }
+
 
 }
 
