@@ -1,32 +1,3 @@
-var users = [{
-    id: 1,
-    first_name: ' Jason',
-    last_name: 'Navarro',
-    email: 'xxxx',
-    loan_amt: 400,
-    user_story: 'story',
-    user_img: 'image_url 1',
-    created: "2017-10-08T20:15:01.000Z" },
-    {
-        id: 2,
-        first_name: ' Joey',
-        last_name: 'Boone',
-        email: 'xxxx',
-        loan_amt: 400,
-        user_story: 'story2',
-        user_img: 'image_url 2',
-        created: "2017-10-08T20:15:01.000Z" },
-        {
-            id: 3,
-            first_name: ' Pepe',
-            last_name: 'Threerro',
-            email: 'xxxx',
-            loan_amt: 400,
-            user_story: 'story3',
-            user_img: 'image_url 3',
-            created: "2017-10-08T20:15:01.000Z" },
-        ]
-
 var express = require("express");
 var bodyParser = require("body-parser");
 
