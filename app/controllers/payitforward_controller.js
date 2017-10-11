@@ -105,9 +105,9 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 // Route to login 
 
-router.post("/login", function (req, res) {
+router.get("/login", function (req, res) {
     // console.log(req.body)
-    alert(req.body)
+res.send(req.body)
     // user.setDashboardId(req.body.email, function (userResult) {
 
     //     // console.log("Yomomma", userResult[0]) 
