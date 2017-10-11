@@ -65,6 +65,12 @@ var loans = {
         orm.matchingLoanData(function (result) {
             cb(result);
         })
+    },
+
+    allIdInfo: function (id, cb) {
+        orm.allIdInfo("loans_table", id, function(result){
+            cb(result);
+        })
     }
 
 }

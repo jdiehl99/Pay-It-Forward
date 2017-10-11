@@ -62,6 +62,12 @@ var user = {
 
             cb(result);
         })
+    },
+
+    allIdInfo: function (id, cb) {
+        orm.allIdInfo("user_table", id, function(result){
+            cb(result);
+        })
     }
 
 }
