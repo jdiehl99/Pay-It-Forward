@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.js">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/js/facebook.js"></script>
-  
-    <title>Project 2</title>
+    <title>Index Title</title>
+    <link rel='stylesheet' href='/assets/css/style.css'/>
 </head>
 <body>
+
+
     <!-- Navbar -->
     <nav class="navbar navbar-default fixed-top">
         <div class="container">
@@ -28,9 +22,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="#">DASHBORD</a></li>
                     <li><a href="#">CHARITIES</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">CONTAC US</a></li>
                 </ul>
             </div>
         </div>
@@ -62,17 +56,20 @@
     <!-- Third Container (Grid) -->
     <div class="container-fluid bg-3 text-center">
         <h3 class="margin">Want to donate?</h3><br>
+
         <div class="row">
-                <% for (var i=0; i<3; i++){%>
-                    var randomuserID = Math.floor(Math.random() * users.length);
-                    var randomusers = allusers[randomuser_tableID];
-                    $('#'+randomAllusers+'').addClass('userNegitive');
-                    allusers.splice(randomuserID, 1);
-                    <div class="col-sm-4">
-                            <p><%= user_story[randomusers] %></p>
-                            <img src%="user_img[randomeusers]" class="img-responsive margin" style="width:100%" alt="Image">
-                        </div>
-                 <% } %>
+            <div class="col-sm-4">
+                <p><%=users.user_story %></p>
+                <img src=""<%=users.user_img %>"" class="img-responsive margin" style="width:100%" alt="Image">
+            </div>
+            <div class="col-sm-4">
+                    <p><%=users.user_story %></p>
+                    <img src=<%=users.user_img %> class="img-responsive margin" style="width:100%" alt="Image">
+                </div>
+                <div class="col-sm-4">
+                        <p><%=users.user_story %></p>
+                        <img src=""<%=users.user_img %>"" class="img-responsive margin" style="width:100%" alt="Image">
+                    </div>
         </div>
     </div>
 
@@ -80,6 +77,5 @@
     <footer class="container-fluid bg-4 text-center">
         <p>All copyrights tha group <a href="https://www.github.com">www.github.com</a></p>
     </footer>
-
 </body>
 </html>

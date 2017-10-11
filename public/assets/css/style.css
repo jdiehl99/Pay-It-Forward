@@ -13,15 +13,33 @@ p {
 }
 
 .bg-1 {
-    background-image: url("http://adlercentre.ca/wp-content/uploads/2013/11/volunteer.jpg");
+    /* background-image: url("http://adlercentre.ca/wp-content/uploads/2013/11/volunteer.jpg"); */
+    /* background-image: url("https://i.pinimg.com/originals/8c/ee/dc/8ceedc01873c124472a26d16e575c149.jpg"); */
+    background-image: url("https://205eev2oa0jm1t4yb914s1nw-wpengine.netdna-ssl.com/wp-content/uploads/2015/10/UMTBanner2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 24px;
     /* font-weight: bold; */
-    color: #4E4B4B;
-
+    color: #FFFFFF;
 }
 
+
+
+
+@media only screen and (max-width: 500px) {
+.bg-1 {
+background-image: url("https://i.pinimg.com/736x/91/94/9a/91949a2f6e1c830c4ef8616bb95ecac3--helping-others-helping-hands.jpg");
+color: #673ab7;
+}
+.bg-img {
+    opacity: 1.0;
+}
+
+}/* THIS IS THE END OF MEDIA QUERIES */
+
+
+
+@media only screen and (min-width: 500px) {
 .bg-img {
     opacity: 0.5;
 }
@@ -30,10 +48,11 @@ p {
     opacity: 1.0;
 }
 
-
+}
 
 .bg-2 {
-    background-color: #474e5d;
+    /* background-color: #474e5d; */
+    background-color: #673ab7;
     /* Dark Blue */
     color: #ffffff;
 }
@@ -45,7 +64,8 @@ p {
 }
 
 .bg-4 {
-    background-color: #2f2f2f;
+    /* background-color: #2f2f2f; */
+    background-color: #673ab7;
     /* Black Gray */
     color: #fff;
 }
@@ -63,8 +83,13 @@ p {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+    /* background-color: #474e5d; */
+    background-color: #673ab7;
 }
 
+.navbar-default .navbar-brand {
+    color: #fcf8e3;
+}
 .navbar-nav li a:hover {
     color: #1abc9c !important;
 }
