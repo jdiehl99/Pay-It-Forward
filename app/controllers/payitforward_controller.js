@@ -12,6 +12,7 @@ var user = require("../models/user_model.js");
 
 var donor = require("../models/donor_model.js");
 
+var charity = require("../models/charity_model.js");
 
 // Route to go to home page
 router.get("/", function (req, res) {
