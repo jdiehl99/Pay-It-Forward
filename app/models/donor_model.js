@@ -51,6 +51,12 @@ var donor = {
         })
 
 
+    },
+
+    allIdInfo: function (id, cb) {
+        orm.allIdInfo("donors_table", id, function(result){
+            cb(result);
+        })
     }
 
 

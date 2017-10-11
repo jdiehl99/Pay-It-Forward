@@ -63,19 +63,19 @@ var orm = {
     },
 
 
-    setDashboardId : function(tableName, email, cb){
-            
-            var queryString = "SELECT id FROM " + tableName;
-                queryString += " WHERE email = " + "'" + email + "'";
+    setDashboardId: function (tableName, email, cb) {
 
-                console.log(queryString);
+        var queryString = "SELECT id FROM " + tableName;
+        queryString += " WHERE email = " + "'" + email + "'";
 
-            connection.query(queryString, function(err, result){
-                if(err){
-                    throw  err;
-                }
-                cb(result);
-            });
+        console.log(queryString);
+
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
 
     },
 
@@ -163,13 +163,13 @@ var orm = {
     matchingLoanData: function (cb) {
 
         var queryString = "SELECT d.first_name as donor_id, u.first_name as user_id, charity_name, l.id as loan_id";
-            queryString += " FROM user_table as u";
-            queryString += " INNER JOIN loans_table as l";
-            queryString += " ON u.id = l.userid";
-            queryString += " INNER JOIN donors_table as d";
-            queryString += " ON l.donorid = d.id";
-            queryString += " INNER JOIN charity_table as c";
-            queryString += " ON l.charityid = c.id";
+        queryString += " FROM user_table as u";
+        queryString += " INNER JOIN loans_table as l";
+        queryString += " ON u.id = l.userid";
+        queryString += " INNER JOIN donors_table as d";
+        queryString += " ON l.donorid = d.id";
+        queryString += " INNER JOIN charity_table as c";
+        queryString += " ON l.charityid = c.id";
 
         // mysql connection
         connection.query(queryString, function (err, result) {
@@ -181,19 +181,36 @@ var orm = {
 
     },
 
-    getLoanAmount : function(tableName ,lowNum, highNum , cb){
+    getLoanAmount: function (tableName, lowNum, highNum, cb) {
         var queryString = "SELECT * FROM " + tableName;
-            queryString += " WHERE loan_amt >= " + lowNum;
-            queryString += " AND loan_amt <= " + highNum;
+        queryString += " WHERE loan_amt >= " + lowNum;
+        queryString += " AND loan_amt <= " + highNum;
 
-                console.log(queryString);
-            connection.query(queryString, function(err, result){
-                if (err){
-                    throw err;
-                }
-                cb(result);
-            })
+        console.log(queryString);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
+    },
+
+    allIdInfo: function (tableName, id, cb) {
+
+        var queryString = "SELECT * FROM " + tableName;
+        queryString += " WHERE id = " + id;
+
+        console.log(queryString);
+
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+
     }
+
 };
 
 module.exports = orm;

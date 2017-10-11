@@ -58,6 +58,12 @@ var charity = {
         });
     },
 
+    allIdInfo: function (id, cb) {
+        orm.allIdInfo("charity_table", id, function(result){
+            cb(result);
+        })
+    }
+
 }
 
 module.exports = charity;
