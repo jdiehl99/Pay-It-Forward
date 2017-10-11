@@ -179,6 +179,20 @@ var orm = {
             cb(result);
         })
 
+    },
+
+    getLoanAmount : function(tableName ,lowNum, highNum , cb){
+        var queryString = "SELECT * FROM " + tableName;
+            queryString += " WHERE loan_amt >= " + lowNum;
+            queryString += " AND loan_amt <= " + highNum;
+
+                console.log(queryString);
+            connection.query(queryString, function(err, result){
+                if (err){
+                    throw err;
+                }
+                cb(result);
+            })
     }
 };
 
