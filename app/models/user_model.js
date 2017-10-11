@@ -57,6 +57,13 @@ var user = {
         });
     },
 
+    getLoanAmount : function(lowNum, highNum , cb){
+        orm.getLoanAmount("user_table", lowNum, highNum, function(result){
+
+            cb(result);
+        })
+    }
+
 }
 
 module.exports = user;
