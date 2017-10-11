@@ -125,8 +125,7 @@ router.post("/login", function (req, res) {
                 } else {
 
                   
-                            res.send(donorResult[0])
-                    // res.redirect("/donor/dashboard/" + donorResult[0].id);
+                    res.redirect("/donor/dashboard/" + donorResult[0].id);
 
                 }
             })
