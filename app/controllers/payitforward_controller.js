@@ -64,7 +64,7 @@ router.get("/user/dashboard/:id", function (req, res) {
 
 var userId = req.params.id;
 
-user.allIdInfo(userId, function(userResult){
+user.allIdInfo(usersId, function(userResult){
 
 charity.all(function(charityResult){
 
@@ -79,6 +79,19 @@ charity.all(function(charityResult){
 
 // donor dashboard
 router.get("/donor/dashboard/:id", function (req, res) {
+
+var donorId = req.params.id;
+
+donor.allIdInfo(donorId, function(donorResult){
+
+charity.rand(3, function(charityResult){
+
+    user.rand(6, function(userResults){
+        res.render("donor_dashboard",{donor: donorResult, charity: charityResults, user: userResults})
+    })
+})
+
+})
 
 });
 
