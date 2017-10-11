@@ -71,15 +71,9 @@ $( document ).ready(function(){
      
       console.log(response);
       
-            $.ajax("/login", {
-              type: "GET",
-              data: response.email
-          }).then(
-              function () {
-                
-                  // Reload the page to get the updated list
-                  // location.reload();
-              });
+            $.post("/login", {email : response.email}, function(data){
+              
+            })
     });
 
   }
