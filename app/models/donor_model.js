@@ -11,6 +11,14 @@ var donor = {
             cb(result)
         })
     },
+
+    setDashboardId: function (id, cb) {
+
+        orm.setDashboardId("donors_table", id, function (result) {
+            cb(result);
+        })
+
+    },
     /**
      * @param {array} cols - first name, last name, email.
      * @param {array} vals - enter vals in array [].

@@ -14,6 +14,14 @@ var loans = {
             cb(result)
         })
     },
+
+    setDashboardId: function (id, cb) {
+
+        orm.setDashboardId("loans_table", id, function (result) {
+            cb(result);
+        })
+
+    },
     /**
      * @param {array} cols - first name, last name , email.
      * @param {array} vals - enter vals in array [].
@@ -25,7 +33,8 @@ var loans = {
         })
     },
 
-   /**
+
+    /**
      * Update data in specified table, please note add a space to the values in the obj.
      * @param {obj} objColVals - object with column names as properties and then add space new values. 
      * @param {string} condition - EX var condition = "id = " + req.params.id.
@@ -52,8 +61,8 @@ var loans = {
     /** Return all data from other tables that match the loan.
      * @param {function} cb - function(result).
      */
-    matchingLoanData: function(cb){
-        orm.matchingLoanData(function(result){
+    matchingLoanData: function (cb) {
+        orm.matchingLoanData(function (result) {
             cb(result);
         })
     }
