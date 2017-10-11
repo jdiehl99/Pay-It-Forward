@@ -105,40 +105,37 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 // Route to login 
 
-router.get("/login", function(req,res){
-    res.send("Hi")
-})
-
-router.post("/login", function (req, res) {
+router.get("/login", function (req, res) {
     //nsole.log(req.body)s
 
-    user.setDashboardId(req.body, function (userResult) {
+    res.json(req);
+    // user.setDashboardId(req.body, function (userResult) {
 
-        // console.log("Yomomma", userResult[0]) 
+    //     // console.log("Yomomma", userResult[0]) 
 
-        if (userResult[0] == undefined) {
+    //     if (userResult[0] == undefined) {
 
-            donor.setDashboardId(req.body, function (donorResult) {
+    //         donor.setDashboardId(req.body, function (donorResult) {
 
-                console.log("check donor ", donorResult[0])
+    //             console.log("check donor ", donorResult[0])
 
-                if (donorResult[0] == undefined) {
+    //             if (donorResult[0] == undefined) {
 
-                    res.redirect("/signup");
+    //                 res.redirect("/signup");
 
-                } else {
+    //             } else {
 
-                    res.redirect("/donor/dashboard/" + donorResult[0].id);
+    //                 res.redirect("/donor/dashboard/" + donorResult[0].id);
 
-                }
-            })
+    //             }
+    //         })
 
-        } else {
+    //     } else {
 
-            res.redirect("/user/dashboard/" + userResult[0].id);
-        }
+    //         res.redirect("/user/dashboard/" + userResult[0].id);
+    //     }
 
-    })
+    // })
 
 })
 
