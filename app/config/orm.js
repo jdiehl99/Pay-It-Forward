@@ -63,10 +63,10 @@ var orm = {
     },
 
 
-    setDashboardId : function(tableName, id, cb){
+    setDashboardId : function(tableName, email, cb){
             
-            var queryString = "SELECT * FROM " + tableName;
-                queryString += " WHERE id = " + id;
+            var queryString = "SELECT id FROM " + tableName;
+                queryString += " WHERE email = " + "'" + email + "'";
 
                 console.log(queryString);
 

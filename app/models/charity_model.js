@@ -1,3 +1,4 @@
+
 var orm = require("../config/orm.js")
 
 
@@ -15,9 +16,9 @@ var charity = {
         })
     },
     
-    setDashboardId: function (id, cb) {
+    setDashboardId: function (email, cb) {
 
-        orm.setDashboardId("charity_table", id, function (result) {
+        orm.setDashboardId("charity_table", email, function (result) {
             cb(result);
         })
 

@@ -34,28 +34,34 @@ router.get("/facebook", function (req, res) {
 
 // user login
 router.post("/user/signup", function (req, res) {
-    user.create(["first_name", "last_name", "email", "loan_amt", "user_story"], [req.body.first_name, req.body.last_name, req.body.email, req.body.loan_amt, req.body.user_story], function (result) {
-        res.redirect("/user/dashboard");
-    });
+    user.create(["first_name", "last_name", "email", "loan_amt", "user_story"], [req.body.first_name, req.body.last_name, req.body.email, req.body.loan_amt, req.body.user_story], function (result) {});
+     
+    user.setDashboardId(req.body.email, function(result2){
+    res.redirect("/user/dashboard/"+result2[0].id);
+    })    
+    
+    
 
 });
 
 //  donor login
 router.post("/donor/signup", function (req, res) {
-    donor.create(["first_name", "last_name", "email", "anonymous"], [req.body.first_name, req.body.last_name, req.body.email, req.body.anonymous], function (result) {
-        res.redirect("/donor/dashboard");
-    });
+    donor.create(["first_name", "last_name", "email", "anonymous"], [req.body.first_name, req.body.last_name, req.body.email, req.body.anonymous], function (result) {});
 
+    donor.setDashboardId(req.body.email, function(result2){
+    res.redirect("/donor/dashboard/"+result2[0].id);
+    })
 });
 
 
 // user dashboard
-router.get("/user/dashboard", function (req, res) {
+router.get("/user/dashboard/:id", function (req, res) {
+
 
 });
 
 // donor dashboard
-router.get("/donor/dashboard", function (req, res) {
+router.get("/donor/dashboard/:id", function (req, res) {
 
 });
 
