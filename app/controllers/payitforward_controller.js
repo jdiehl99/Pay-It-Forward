@@ -57,6 +57,18 @@ router.post("/donor/signup", function (req, res) {
 // user dashboard
 router.get("/user/dashboard/:id", function (req, res) {
 
+var usersId = req.params.id;
+
+user.allIdInfo(userId, function(userResult){
+
+charity.all(function(charityResult){
+
+    res.render("index", {user: userResult, charity: charityResult})
+});
+
+
+});
+
 
 });
 
