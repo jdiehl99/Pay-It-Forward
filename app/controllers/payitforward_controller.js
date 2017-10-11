@@ -15,7 +15,11 @@ var donor = require("../models/donor_model.js");
 
 // Route to go to home page
 router.get("/", function (req, res) {
-    res.render("index")
+
+    user.rand(3, function(result){
+    res.render("index", {user: result})
+    });
+    
 });
 
 // Route to user page
@@ -56,6 +60,18 @@ router.post("/donor/signup", function (req, res) {
 
 // user dashboard
 router.get("/user/dashboard/:id", function (req, res) {
+
+var usersId = req.params.id;
+
+user.allIdInfo(userId, function(userResult){
+
+charity.all(function(charityResult){
+
+    res.render("user_dashboard", {user: userResult, charity: charityResult})
+});
+
+
+});
 
 
 });
