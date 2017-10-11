@@ -12,6 +12,7 @@ var user = require("../models/user_model.js");
 
 var donor = require("../models/donor_model.js");
 
+var charity = require("../models/charity_model.js");
 
 // Route to go to home page
 router.get("/", function (req, res) {
@@ -26,7 +27,7 @@ router.get("/", function (req, res) {
 router.get("/user", function (req, res) {
 
 });
-// Route to donor pagge
+// Route to donor page
 router.get("/donor", function (req, res) {
 
 });
