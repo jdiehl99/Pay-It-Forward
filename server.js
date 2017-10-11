@@ -16,22 +16,6 @@ var expressLayouts = require('express-ejs-layouts');
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
-// app.get('/', function(req, res){
-//     connection.query("SELECT * FROM users_table", function(err, results) {
-//        if (err) throw err;
-// //            var hbsObject = {burgers: results};
-//         res.render("index",{users: results});
-//     })
-// });
-
-
-app.get('/', function(req, res, next) {
-    
-        res.render('index', {
-   users: users
-        });
-
-  });
 
 // Import routes and give the server access to them.
 var routes = require("./app/controllers/payitforward_controller.js");
