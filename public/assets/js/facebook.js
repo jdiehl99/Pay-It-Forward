@@ -67,7 +67,7 @@ $( document ).ready(function(){
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-
+$("#fbLog").on("click", function(){
   function testAPI(response) {
     console.log('Welcome!  Fetching your information.... ');
 
@@ -81,4 +81,6 @@ $( document ).ready(function(){
     });
 
   }
+})
+
 })
