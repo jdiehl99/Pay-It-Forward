@@ -107,7 +107,7 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 router.get("/login", function (req, res) {
     // console.log(req.body)
-res.send(req.body)
+res.json(req.body)
     // user.setDashboardId(req.body.email, function (userResult) {
 
     //     // console.log("Yomomma", userResult[0]) 
