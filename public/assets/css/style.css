@@ -101,3 +101,112 @@ color: #673ab7;
     left: 0;
     z-index: 1030;
 }
+
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+
+        .row.content {
+            height: 550px
+        }
+        /* Set gray background color and 100% height */
+
+        .sidenav {
+            background-color: #673ab7;
+            height: 100%;
+            color: white;
+        }
+        /* On small screens, set height to 'auto' for the grid */
+
+        @media screen and (max-width: 767px) {
+            .row.content {
+                height: auto;
+            }
+        }
+
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            /* background-color: #673ab7; */
+            /* color: #f5f6f7; */
+        }
+
+        .nav-custom {
+            background-color: #673ab7;
+        }
+
+        .well {
+            background-color: #673ab7;
+            color: white;
+        }
+
+        .nav-pills>li>a {
+            color: white;
+        }
+
+        .nav-pills>li>a::hover {
+            color: #070606;
+        }
+
+        .nav>li>a:focus,
+        .nav>li>a:hover {
+            background-color: #5c1e61;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: #FFFFFF;
+        }
+
+
+                /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+
+                .row.content {
+                    height: 550px
+                }
+                /* Set gray background color and 100% height */
+        
+                .sidenav {
+                    background-color: #673ab7;
+                    height: 100%;
+                    color: white;
+                }
+                /* On small screens, set height to 'auto' for the grid */
+        
+                @media screen and (max-width: 767px) {
+                    .row.content {
+                        height: auto;
+                    }
+                }
+        
+                body {
+                    font: 20px Montserrat, sans-serif;
+                    line-height: 1.8;
+                    /* background-color: #673ab7; */
+                    /* color: #f5f6f7; */
+                }
+        
+                .nav-custom {
+                    background-color: #673ab7;
+                }
+        
+                .well {
+                    background-color: #673ab7;
+                    color: white;
+                }
+        
+                .nav-pills>li>a {
+                    color: white;
+                }
+        
+                .nav-pills>li>a::hover {
+                    color: #070606;
+                }
+        
+                .nav>li>a:focus,
+                .nav>li>a:hover {
+                    background-color: #5c1e61;
+                }
+                .navbar-inverse .navbar-brand {
+            color: #FFFFFF;
+                }
+
+
