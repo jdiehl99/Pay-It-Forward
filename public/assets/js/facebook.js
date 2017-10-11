@@ -75,9 +75,18 @@ $( document ).ready(function(){
      
       console.log(response);
       
-            $.post("/login", {email : response.email}, function(data){
-              console.log(data);
-            })
+      $.ajax("/login", {
+        type: "POST",
+        data: { email: response.email}
+    }).then(
+        function (data) {
+          console.log(data);
+            // Reload the page to get the updated list
+            // location.reload();
+        });
+            // $.post("/login", {email : response.email}, function(data){
+            //   console.log(data);
+            // })
     });
   })
   }
