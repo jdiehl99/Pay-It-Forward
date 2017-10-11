@@ -42,7 +42,6 @@ CREATE TABLE `user_table` (
 	`loan_amt` Float( 5, 2 ) NOT NULL,
 	`user_story` LongText CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 	`user_img` VarChar( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-	`created` DateTime NOT NULL,
 	`createdAt` Timestamp NULL DEFAULT CURRENT_TIMESTAMP,
 	`hours_worked` Int( 11 ) NULL,
 	`hours_needed` Int( 11 ) NULL,
