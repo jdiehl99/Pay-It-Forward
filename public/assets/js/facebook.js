@@ -61,10 +61,18 @@
     console.log('Welcome!  Fetching your information.... ');
 
     FB.api('/me', {fields: 'name,email,first_name,last_name,picture'}, function(response) {
+     
       console.log(response);
-      document.getElementById('status').innerHTML =
-            'Thanks for logging in, ' + response.name + '!';
-
+      
+            $.ajax("/login", {
+              type: "POST",
+              data: response.email
+          }).then(
+              function () {
+                
+                  // Reload the page to get the updated list
+                  // location.reload();
+              });
     });
 
   }
