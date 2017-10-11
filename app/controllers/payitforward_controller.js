@@ -105,6 +105,10 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 // Route to login 
 
+router.get("/login", function(req,res){
+    
+})
+
 router.post("/login", function (req, res) {
     //nsole.log(req.body)s
 
