@@ -39,7 +39,11 @@ $( document ).ready(function(){
 
 
   FB.getLoginStatus(function(response) {
+    if(response == "connected"){
+      FB.logout();
+    }else{
     statusChangeCallback(response);
+    }
   });
 
   };
@@ -72,7 +76,7 @@ $( document ).ready(function(){
       console.log(response);
       
             $.post("/login", {email : response.email}, function(data){
-              
+              console.log(data);
             })
     });
 
