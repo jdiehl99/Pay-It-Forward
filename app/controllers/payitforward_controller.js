@@ -16,8 +16,7 @@ var charity = require("../models/charity_model.js");
 
 // Route to go to home page
 router.get("/", function (req, res) {
-
-    user.rand(3, function(result){
+    user.all( function(result){
     res.render("index", {user: result})
     });
     
@@ -64,7 +63,7 @@ router.get("/user/dashboard/:id", function (req, res) {
 
 var userId = req.params.id;
 
-user.allIdInfo(usersId, function(userResult){
+user.allIdInfo(userId, function(userResult){
 
 charity.all(function(charityResult){
 
@@ -84,9 +83,9 @@ var donorId = req.params.id;
 
 donor.allIdInfo(donorId, function(donorResult){
 
-charity.rand(3, function(charityResult){
+charity.all(function(charityResult){
 
-    user.rand(6, function(userResults){
+    user.all(function(userResults){
         res.render("donor_dashboard",{donor: donorResult, charity: charityResults, user: userResults})
     })
 })
