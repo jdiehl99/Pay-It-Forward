@@ -12,9 +12,9 @@ var donor = {
         })
     },
 
-    setDashboardId: function (id, cb) {
+    setDashboardId: function (email, cb) {
 
-        orm.setDashboardId("donors_table", id, function (result) {
+        orm.setDashboardId("donors_table", email, function (result) {
             cb(result);
         })
 

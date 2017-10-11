@@ -15,9 +15,9 @@ var loans = {
         })
     },
 
-    setDashboardId: function (id, cb) {
+    setDashboardId: function (email, cb) {
 
-        orm.setDashboardId("loans_table", id, function (result) {
+        orm.setDashboardId("loans_table", email, function (result) {
             cb(result);
         })
 

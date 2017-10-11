@@ -15,9 +15,9 @@ var user = {
         })
     },
 
-    setDashboardId: function (id, cb) {
+    setDashboardId: function (email, cb) {
 
-      orm.setDashboardId("user_table", id, function(result){
+      orm.setDashboardId("user_table", email, function(result){
           cb(result);
       })
 
