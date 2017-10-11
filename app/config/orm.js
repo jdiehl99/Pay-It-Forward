@@ -62,6 +62,23 @@ var orm = {
 
     },
 
+
+    setDashboardId : function(tableName, id, cb){
+            
+            var queryString = "SELECT * FROM " + tableName;
+                queryString += " WHERE id = " + id;
+
+                console.log(queryString);
+
+            connection.query(queryString, function(err, result){
+                if(err){
+                    throw  err;
+                }
+                cb(result);
+            });
+
+    },
+
     /**
      * Insert new data into specified table.
      * @param {string} table - table name.
@@ -164,6 +181,5 @@ var orm = {
 
     }
 };
-
 
 module.exports = orm;
