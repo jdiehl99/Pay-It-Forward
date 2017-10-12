@@ -38,7 +38,8 @@ $( document ).ready(function(){
     version    : 'v2.8' // use graph api version 2.8
   });
 
-
+  isLoaded = true;
+};
   FB.getLoginStatus(function(response) {
     if(response == "connected"){
       FB.logout();
@@ -47,7 +48,7 @@ $( document ).ready(function(){
     }
   });
 
-  };
+  
   function checkIfLoaded() {
     if(isLoaded) console.log("LOADED!");
     else console.log("NOT YET!");
