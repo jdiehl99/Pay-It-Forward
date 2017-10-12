@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>User Dashboard</title>
-    <link rel='stylesheet' href='/assets/css/style.css'/>
-    <script src="assets/js/facebook.js"></script>
-</head>
-<body>
     
         <nav class="navbar navbar-inverse visible-xs nav-custom">
             <div class="container-fluid">
@@ -45,7 +37,7 @@
                 <div class="col-sm-9">
                     <div class="well">
                         <h4>Welcome <%=user[0].first_name %> <%=user[0].last_name %></h4>
-                        <p>here are you updates!</p>
+                        <p>Welcome to our newest charity: Second Harvest Food Bank</p>
                     </div>
                     <div class="row">
                         <div class="col-sm-3">
@@ -98,7 +90,7 @@
                         <div class="container">
                             <h2>Charities</h2>
                             <p>Here are some of the charities that need your help</p>
-                            <table class="table table-hover">
+                            <table class="table table-hover charity-table">
                                 <thead>
                                     <tr>
                                         <th>Charity Name</th>
@@ -122,6 +114,21 @@
                                         <td><%=charity[2].hours_needed %></td>
                                         <td><%=charity[2].overview %></td>
                                     </tr>
+                                    <tr>
+                                        <td><%=charity[3].charity_name %></td>
+                                        <td><%=charity[3].hours_needed %></td>
+                                        <td><%=charity[3].overview %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><%=charity[4].charity_name %></td>
+                                        <td><%=charity[4].hours_needed %></td>
+                                        <td><%=charity[4].overview %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><%=charity[5].charity_name %></td>
+                                        <td><%=charity[5].hours_needed %></td>
+                                        <td><%=charity[5].overview %></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -132,5 +139,4 @@
             </div>
         </div>
     
-    </body>
-</html>
+
