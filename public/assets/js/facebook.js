@@ -1,6 +1,7 @@
  $("#fbLog").on("click", function(){
     
  
+  window.fbAsyncInit();
   
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
