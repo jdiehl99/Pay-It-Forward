@@ -2,7 +2,7 @@
 $( document ).ready(function(){
 
   $("#fbLog").on("click", function(){
-    checkIfLoaded() 
+    checkLoginState()
   })
   
   function statusChangeCallback(response) {
@@ -31,14 +31,11 @@ $( document ).ready(function(){
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '289087048261705',
-    channelUrl : '//https://aqueous-fjord-24224.herokuapp.com/',
     cookie     : true,  // enable cookies to allow the server to access 
-    status     : true,                    // the session
+                        // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.8' // use graph api version 2.8
   });
-
-  isLoaded = true;
 
   FB.getLoginStatus(function(response) {
     if(response == "connected"){
@@ -49,19 +46,6 @@ $( document ).ready(function(){
   });
 };
   
-  function checkIfLoaded() {
-    if(isLoaded) console.log("LOADED!");
-    else console.log("NOT YET!");
-
-    return false;
-  }
-  (function(d){
-    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement('script'); js.id = id; js.async = true;
-    js.src = "//connect.facebook.net/en_US/all.js";
-    ref.parentNode.insertBefore(js, ref);
-  }(document));
   // Logout Button
 $("#fbLogOut").on("click", function(){
   fbLogout();
@@ -91,7 +75,7 @@ $("#fbLogOut").on("click", function(){
 
   function testAPI(response) {
     console.log('Welcome!  Fetching your information.... ');
-    $("#fbLog").on("click", function(){
+    // $("#fbLog").on("click", function(){
     FB.api('/me', {fields: 'name,email,first_name,last_name,picture'}, function(response) {
      
       console.log(response);
@@ -110,7 +94,7 @@ $("#fbLogOut").on("click", function(){
             } else { // send to signup page
               window.location.href = "/signup";
             }
-        });
+        // });
             // $.post("/login", {email : response.email}, function(data){
             //   console.log(data);
             // })
