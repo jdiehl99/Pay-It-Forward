@@ -82,7 +82,13 @@ $( document ).ready(function(){
         function (data) {
           console.log("data coming from backend",data);
             // Reload the page to get the updated list
-          //  window.location.href = "/signup";
+            if (data.status === "donor") {
+              window.location.href = "/donor/dashboard/"+data.id;
+            } else if (data.status === "user") {
+              window.location.href = "/user/dashboard/"+data.id;
+            } else { // send to signup page
+              window.location.href = "/signup";
+            }
         });
             // $.post("/login", {email : response.email}, function(data){
             //   console.log(data);
