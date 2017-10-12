@@ -28,7 +28,7 @@ router.get("/", function (req, res) {
 router.get("/user", function (req, res) {
 
 });
-// Route to donor pagge
+// Route to donor page
 router.get("/donor", function (req, res) {
 
 });
@@ -36,8 +36,7 @@ router.get("/donor", function (req, res) {
 // Route to go to home page
 router.get("/signup", function (req, res) {
     user.all(function (result) {
-        res.render("signup", {
-        })
+        res.render("signup", {})
     });
 
 });
@@ -109,11 +108,22 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 // Route to go to profile
 
-router.get("/profile", function(req, res) {
+router.get("/profile/:id", function (req, res) {
+
+    var profileId = req.params.id;
+
+    user.allIdInfo(profileId, function (result) {
+
+        res.render("profile", {
+            user: result
+        });
+    })
+
+
 
 });
-    
-    
+
+
 
 // Route to login 
 
@@ -132,19 +142,28 @@ router.post("/login", function (req, res) {
 
                 if (donorResult[0] == undefined) {
 
-                    res.json({ id : 0, status: "null"});
+                    res.json({
+                        id: 0,
+                        status: "null"
+                    });
 
                 } else {
 
-                  
-                    res.json({ id : donorResult[0].id, status: "donor"});
+
+                    res.json({
+                        id: donorResult[0].id,
+                        status: "donor"
+                    });
 
                 }
             })
 
-        } else { 
+        } else {
 
-            res.json({ id : userResult[0].id , status: "user"});
+            res.json({
+                id: userResult[0].id,
+                status: "user"
+            });
         }
 
     })
