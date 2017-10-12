@@ -1,4 +1,6 @@
 
+$( document ).ready(function(){
+
   $("#fbLog").on("click", function(){
     checkLoginState();
   })
@@ -102,5 +104,5 @@ $("#fbLogOut").on("click", function(){
   })
   }
 
-
+})
 
