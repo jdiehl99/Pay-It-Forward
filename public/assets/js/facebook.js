@@ -2,7 +2,7 @@
 $( document ).ready(function(){
 
   $("#fbLog").on("click", function(){
-    checkLoginState();
+    checkIfLoaded() 
   })
   
   function statusChangeCallback(response) {
@@ -48,7 +48,19 @@ $( document ).ready(function(){
   });
 
   };
+  function checkIfLoaded() {
+    if(isLoaded) console.log("LOADED!");
+    else console.log("NOT YET!");
 
+    return false;
+  }
+  (function(d){
+    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+  }(document));
   // Logout Button
 $("#fbLogOut").on("click", function(){
   fbLogout();
