@@ -48,6 +48,13 @@ $( document ).ready(function(){
 
   };
 
+  // Logout Button
+$("#fbLogOut").on("click", function(){
+  fbLogout();
+
+  window.location.href = "/signup";
+});
+
   function fbLogout() {
     FB.getLoginStatus(function(response) {
         if (response && response.status === 'connected') {
