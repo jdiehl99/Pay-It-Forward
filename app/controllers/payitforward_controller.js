@@ -124,19 +124,19 @@ router.get("/login", function (req, res) {
 
                 if (donorResult[0] == undefined) {
 
-                    res.redirect("/signup");
+                    res.json({ id : 0, status: "null"});
 
                 } else {
 
                   
-                    res.redirect("/donor/dashboard/" + donorResult[0].id);
+                    res.json({ id : donorResult[0].id, status: "donor"});
 
                 }
             })
 
-        } else {
+        } else { 
 
-            res.redirect("/user/dashboard/" + userResult[0].id);
+            res.json({ id : userResult[0].id , status: "user"});
         }
 
     })
