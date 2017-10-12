@@ -40,17 +40,18 @@
                     <%=donor[0].first_name %>
                         <%=donor[0].last_name %>
                 </h4>
-                <p>here are you updates!</p>
+                 <p>Welcome to our newest charity: Second Harvest Food Bank</p>
             </div>
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="well">
-                        <h4>Peope you Helped</h4>
-                        <p>
-                            <%=donor[0].people_helped %>
-                        </p>
-                    </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <h4>People you've Helped</h4>
+                            <p>
+                                <%=donor[0].people_helped %>
+                            </p>
+                        </div>
+
                 </div>
                 <div class="col-sm-4">
                     <div class="well">
@@ -221,7 +222,59 @@
                         </div>
                     </div>
                 </div>
-            </div>
+<!-- this is the end of row 2 -->
+
+
+                  <div class="container-fluid hiddenTable">
+                    <h2>Charities</h2>
+                    <p>Here are some of the charities that need your help</p>
+                    <table class="table table-hover charity-table">
+                        <thead>
+                            <tr>
+                                <th>Charity Name</th>
+                                <th>Hours Needed</th>
+                                <th>Job Requirements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <%=charity[0].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[0].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[0].overview %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%=charity[1].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[1].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[1].overview %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%=charity[2].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[2].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[2].overview %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- this is the end of the chart -->
+
 
 
             <div class="modal fade product_view" id="product_view">
@@ -277,22 +330,6 @@
 
         </div>
         <!-- this is the end of col-9 -->
-
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="well">
-                        <p>Banner here Ad just for you</p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="well">
-                        <p>Banner here Ad just for you</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div>
     <!-- row content -->

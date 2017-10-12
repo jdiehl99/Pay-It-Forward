@@ -76,7 +76,12 @@ color: #673ab7;
     background-color: #673ab7;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-brand  {
+    color: #fcf8e3;
+  
+}
+
+.navbar-right  {
     color: #fcf8e3;
 }
 .navbar-right {
@@ -168,3 +173,8 @@ color: #FFFFFF;
 .product_view .modal-dialog{max-width: 800px; width: 100%;}
 .pre-cost{text-decoration: line-through; color: #a5a5a5;}
 .space-ten{padding: 10px 0;}
+
+
+.charity-table {
+    font-size: 12px;
+}
