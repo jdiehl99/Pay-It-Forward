@@ -39,7 +39,7 @@ $( document ).ready(function(){
   });
 
   isLoaded = true;
-};
+
   FB.getLoginStatus(function(response) {
     if(response == "connected"){
       FB.logout();
@@ -47,7 +47,7 @@ $( document ).ready(function(){
     statusChangeCallback(response);
     }
   });
-
+};
   
   function checkIfLoaded() {
     if(isLoaded) console.log("LOADED!");
