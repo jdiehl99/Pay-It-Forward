@@ -76,7 +76,7 @@ $( document ).ready(function(){
       console.log(response);
       
       $.ajax("/login", {
-        type: "GET",
+        type: "POST",
         data: { email: response.email}
     }).then(
         function (data) {
