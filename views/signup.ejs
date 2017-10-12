@@ -83,6 +83,151 @@
                 </div>
             </div>
         </section>
-    
+    <script>
+    $(function () {
+
+        // this hide the following field until donor checkbox is on 
+        $(".anonyInput").hide();
+        // some comment
+        $('#toggle-event').change(function () {
+            if ($(this).prop('checked')) {
+                $(".hideShow").hide();
+                $(".anonyInput").show();
+            } else {
+                $(".hideShow").show();
+                $(".anonyInput").hide();
+            }
+        });
+
+        // the donor is anonymous by default
+        var anony = 1;
+        $("#anony").change(function () {
+            if (!$(this).prop('checked')) {
+                anony = 0;
+            }
+        })
+
+
+
+
+
+        $("#sendInfo").on("click", function (event) {
+            // Make sure to preventDefault on a submit event.
+            event.preventDefault();
+            if ($("#toggle-event").prop('checked')) {
+
+
+                var Firstname = $("#firstName").val().trim();
+                var Lastname = $("#lastName").val().trim();
+                var email = $("#email").val().trim();
+
+                if (validateChar(Firstname) && validateChar(Lastname) && valEmail(email)) {
+
+
+                    var newDoner = {
+                        first_name: Firstname,
+                        last_name: Lastname,
+                        email: email,
+                        anonymous: anony,
+                    };
+
+                    console.log(newDoner);
+
+                    // Send the POST request.
+                    $.ajax("/doner/signup", {
+                        type: "POST",
+                        data: newDoner
+                    }).then(
+                        function () {
+                            console.log("created new doner");
+                            // Reload the page to get the updated list
+                            location.reload();
+                        });
+                }
+
+            } else {
+                console.log("you are user");
+
+
+                var Firstname = $("#firstName").val().trim();
+                var Lastname = $("#lastName").val().trim();
+                var email = $("#email").val().trim();
+                var loan = $("#loanAmout").val().trim();
+                var userStory = $("#message").val().trim();
+
+                if (validateChar(Firstname) && validateChar(Lastname) && valEmail(email) && valNumb(
+                        loan) && (userStory !== "")) {
+
+
+
+                    var newUser = {
+                        first_name: Firstname,
+                        last_name: Lastname,
+                        email: email,
+                        loan_amt: loan,
+                        user_story: userStory
+                        // user_img:
+                    };
+
+                    console.log(newUser);
+
+                    // Send the POST request.
+                    $.ajax("/user/signup", {
+                        type: "POST",
+                        data: newUser
+                    }).then(
+                        function () {
+                            console.log("created new user");
+                            // Reload the page to get the updated list
+                            location.reload();
+                        });
+
+                }
+            }
+
+        });
+
+
+        function valEmail(email) {
+
+            if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                return true;
+            }
+            alert("That is not a valid email address");
+            return false;
+        }
+
+
+        function valNumb(loanN) {
+
+            if (/^\d+$/.test(loanN)) {
+                return true;
+            }
+            
+            alert("Please re-enter loan amount");
+
+            return false;
+        }
+
+
+
+        function validateChar(term) {
+            if (term == "") {
+
+                alert("Please fill the required fields");
+
+                return false;
+            }
+            if (/!^[a-zA-Z]*$/g.test(term)) {
+
+                alert("Invalid characters");
+                return false;
+            }
+            return true;
+        }
+
+
+    });
+</script>
     </body>
 </html>
