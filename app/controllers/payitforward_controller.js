@@ -107,6 +107,14 @@ router.get("/donor/dashboard/:id", function (req, res) {
 
 });
 
+// Route to go to profile
+
+router.get("/profile", function(req, res) {
+
+});
+    
+    
+
 // Route to login 
 
 router.post("/login", function (req, res) {
@@ -142,5 +150,7 @@ router.post("/login", function (req, res) {
     })
 
 })
+
+
 
 module.exports = router;
