@@ -1,6 +1,4 @@
 
-
-
   $("#fbLog").on("click", function(){
     checkLoginState();
   })
