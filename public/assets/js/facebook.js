@@ -1,4 +1,4 @@
-// $( document ).ready(function(){
+$("#fbLog" ).on("click", function(){
 
 
   // $("#fbLog").on("click", function(){
@@ -105,4 +105,4 @@ $("#fbLogOut").on("click", function(){
   }
 
 
-// })
+});
