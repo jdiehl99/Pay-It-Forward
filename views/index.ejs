@@ -1,67 +1,81 @@
-
-
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-default fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-                <a class="navbar-brand" href="/signup"> <i class="fa fa-user-plus" aria-hidden="true"></i>SignUp</a>
-                <button id="fbLog" class="navbar-brand" scope="public_profile,email" onlogin="window.location='/login'"> 
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> LogIn </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>Welcome to Pay It Foward !</li>
-                </ul>
-            </div>
+<!-- Navbar -->
+<nav class="navbar navbar-default fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/signup">
+                <i class="fa fa-user-plus" aria-hidden="true"></i>SignUp</a>
+            <button id="fbLog" class="navbar-brand" scope="public_profile,email" onlogin="window.location='/login'">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> LogIn </button>
         </div>
-    </nav>
-
-    <!-- First Container -->
-    <div class="container-fluid bg-1 text-center">
-        <h3 class="margin">Who we are...</h3>
-        <img src="https://pbs.twimg.com/profile_images/1232631567/PF-Logo.png" class="img-responsive img-circle margin bg-img"
-            style="display:inline" alt="logo" width="300" height="300">
-        <p>We are a small group of individuals who believe in the Pay It Forward philosophy.  We recognize not everyone is able to obtain a loan in a traditional fashion.  This website was developed to match people in need of help with donors willing to support them on the condition they “Pay It Forward” by giving their time to a charity in need.</p>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>Welcome to Pay It Foward !</li>
+            </ul>
+        </div>
     </div>
+</nav>
 
-    <!-- Second Container -->
-    <div class="container-fluid bg-2 text-center">
-        <h3 class="margin">What we do?</h3>
-        <p>Our group partners with various charities to connect them with volunteers.  In exchange for support from a generous donor, these individuals will volunteer a set number of hours to the selected charity.  The number of hours is determined by the amount of support requested. 
-        </p>
-        <a href="#" class="btn btn-default btn-lg">
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Who we are...</h3>
+    <img src="https://pbs.twimg.com/profile_images/1232631567/PF-Logo.png" class="img-responsive img-circle margin bg-img" style="display:inline"
+        alt="logo" width="300" height="300">
+    <p>We are a small group of individuals who believe in the Pay It Forward philosophy. We recognize not everyone is able to
+        obtain a loan in a traditional fashion. This website was developed to match people in need of help with donors willing
+        to support them on the condition they “Pay It Forward” by giving their time to a charity in need.</p>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">What we do?</h3>
+    <p>Our group partners with various charities to connect them with volunteers. In exchange for support from a generous donor,
+        these individuals will volunteer a set number of hours to the selected charity. The number of hours is determined
+        by the amount of support requested.
+    </p>
+    <!-- <a href="#" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-search"></span> Search for charities
-  </a>
-    </div>
+  </a> -->
+</div>
 
-    <!-- Third Container (Grid) -->
-    <div class="container-fluid bg-3 text-center">
-        <h3 class="margin">Want to donate?</h3><br>
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+    <h3 class="margin">Want to donate?</h3>
+    <br>
 
-        <div class="row">
-                <div class="col-sm-4">
-                        <img src=<%=user[0].user_img %> class="img-responsive margin" style="width:100%; height:300px;" alt="Image 1 <%=user[0].user_img %>">
-                        <p><%=user[0].user_story %></p>
-                    </div>
-            <div class="col-sm-4">
-                    <img src=<%=user[1].user_img %> class="img-responsive margin" style="width:100%;height:300px;" alt="Image 2 <%=user[1].user_img %>">
-                    <p><%=user[1].user_story %></p>                    
-                </div>
-                <div class="col-sm-4">
-                        <img src=<%=user[2].user_img %> class="img-responsive margin" style="height:300px;" alt="Image 3 <%=user[2].user_img %>">
-                        <p><%=user[2].user_story %></p>
-                        
-                    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src=<%=user[0].user_img %> class="img-responsive margin" style="width:100%; height:300px;" alt="Image 1
+            <%=user[0].user_img %>">
+                <p>
+                    <%=user[0].user_story %>
+                </p>
+        </div>
+        <div class="col-sm-4">
+            <img src=<%=user[1].user_img %> class="img-responsive margin" style="width:100%;height:300px;" alt="Image 2
+            <%=user[1].user_img %>">
+                <p>
+                    <%=user[1].user_story %>
+                </p>
+        </div>
+        <div class="col-sm-4">
+            <img src=<%=user[2].user_img %> class="img-responsive margin" style="height:300px;" alt="Image 3
+            <%=user[2].user_img %>">
+                <p>
+                    <%=user[2].user_story %>
+                </p>
+
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="container-fluid bg-4 text-center">
-        <p>All copyrights all Collaborators <a href="https://github.com/jdiehl99/Project2">www.github.com</a></p>
-    </footer>
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+    <p>All copyrights all Collaborators
+        <a href="https://github.com/jdiehl99/Project2">www.github.com</a>
+    </p>
+</footer>
