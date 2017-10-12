@@ -31,8 +31,9 @@ $( document ).ready(function(){
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '289087048261705',
+    channelUrl : '//https://aqueous-fjord-24224.herokuapp.com/',
     cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
+    status     : true,                    // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.8' // use graph api version 2.8
   });
