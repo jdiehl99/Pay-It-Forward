@@ -82,7 +82,7 @@ $( document ).ready(function(){
         function (data) {
           console.log("data coming from backend",data);
             // Reload the page to get the updated list
-            window.location.href = "/signup";
+          //  window.location.href = "/signup";
         });
             // $.post("/login", {email : response.email}, function(data){
             //   console.log(data);
