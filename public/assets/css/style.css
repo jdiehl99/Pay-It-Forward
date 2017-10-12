@@ -79,6 +79,9 @@ color: #673ab7;
 .navbar-default .navbar-brand {
     color: #fcf8e3;
 }
+.navbar-right {
+    color: #fcf8e3;
+}
 .navbar-nav li a:hover {
     color: #1abc9c !important;
 }
