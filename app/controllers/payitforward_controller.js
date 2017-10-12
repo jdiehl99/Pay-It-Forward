@@ -36,7 +36,7 @@ router.get("/donor", function (req, res) {
 // Route to go to home page
 router.get("/signup", function (req, res) {
     user.all(function (result) {
-        res.render("test", {
+        res.render("signup", {
         })
     });
 
