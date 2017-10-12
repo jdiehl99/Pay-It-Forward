@@ -71,14 +71,14 @@ $("#fbLogOut").on("click", function(){
 
   function testAPI(response) {
     console.log('Welcome!  Fetching your information.... ');
-    // $("#fbLog").on("click", function(){
+    
     FB.api('/me', {fields: 'name,email,first_name,last_name,picture'}, function(response) {
      
-      console.log(response);
-      
+     var x  = response;
+      $("#fbLog").on("click", function(){
       $.ajax("/login", {
         type: "POST",
-        data: { email: response.email}
+        data: { email: x.email}
     }).then(
         function (data) {
           console.log("data coming from backend",data);
@@ -94,7 +94,7 @@ $("#fbLogOut").on("click", function(){
             // $.post("/login", {email : response.email}, function(data){
             //   console.log(data);
             // })
-    // });
+    });
   })
   }
 
