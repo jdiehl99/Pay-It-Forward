@@ -27,6 +27,7 @@
   }
 
   window.fbAsyncInit = function() {
+    console.log("running");
   FB.init({
     appId      : '289087048261705',
     cookie     : true,  // enable cookies to allow the server to access 
