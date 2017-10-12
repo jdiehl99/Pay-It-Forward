@@ -1,8 +1,8 @@
 $("#fbLog" ).on("click", function(){
 
-
+console.log("hola");
   // $("#fbLog").on("click", function(){
-  //   checkLoginState();
+    checkLoginState();
   // })
   
   function statusChangeCallback(response) {
@@ -77,7 +77,7 @@ $("#fbLogOut").on("click", function(){
 
   function testAPI(response) {
     console.log('Welcome!  Fetching your information.... ');
-    $("#fbLog").on("click", function(){
+    // $("#fbLog").on("click", function(){
     FB.api('/me', {fields: 'name,email,first_name,last_name,picture'}, function(response) {
      
       console.log(response);
@@ -101,7 +101,7 @@ $("#fbLogOut").on("click", function(){
             //   console.log(data);
             // })
     });
-  })
+  // })
   }
 
 
