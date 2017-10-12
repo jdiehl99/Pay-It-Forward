@@ -1,7 +1,4 @@
- $("#fbLog").on("click", function(){
-    
- 
-  window.fbAsyncInit();
+
   
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -25,9 +22,9 @@
       statusChangeCallback(response);
     });
   }
-
+ 
   window.fbAsyncInit = function() {
-    console.log("running");
+    
   FB.init({
     appId      : '289087048261705',
     cookie     : true,  // enable cookies to allow the server to access 
@@ -101,5 +98,4 @@ $("#fbLogOut").on("click", function(){
   })
   }
 
-})
 
