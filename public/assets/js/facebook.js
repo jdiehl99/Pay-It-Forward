@@ -90,7 +90,11 @@ function testAPI(response) {
           } else if (data.status === "user") {
             window.location.href = "/user/dashboard/" + data.id;
           } else { // send to signup page
-            window.location.href = "/signup";
+            for (var i = 0; i < 1; i++) {
+              window.location.href = "/signup";
+              
+            }
+            
           }
         });
       // $.post("/login", {email : response.email}, function(data){
