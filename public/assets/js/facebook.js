@@ -80,7 +80,7 @@ $( document ).ready(function(){
         data: { email: response.email}
     }).then(
         function (data) {
-          console.log(data);
+          console.log("data coming from backend",data);
             // Reload the page to get the updated list
             window.location.href = "/signup";
         });
