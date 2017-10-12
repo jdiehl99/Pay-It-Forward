@@ -75,6 +75,8 @@ $("#fbLogOut").on("click", function(){
     FB.api('/me', {fields: 'name,email,first_name,last_name,picture'}, function(response) {
      
      var x  = response;
+
+    })
       $("#fbLog").on("click", function(){
       $.ajax("/login", {
         type: "POST",
@@ -95,7 +97,7 @@ $("#fbLogOut").on("click", function(){
             //   console.log(data);
             // })
     });
-  })
+  
   }
 
 
