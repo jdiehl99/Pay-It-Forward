@@ -70,7 +70,7 @@ function fbLogout() {
 
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
-  // $("#fbLog").on("click", function () {
+  $("#fbLog").on("click", function () {
     FB.api('/me', {
       fields: 'name,email,first_name,last_name,picture'
     }, function (response) {
@@ -99,7 +99,7 @@ function testAPI(response) {
         });
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
-      // })
+      });
 
     })
   // });
