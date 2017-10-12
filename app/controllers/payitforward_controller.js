@@ -33,9 +33,13 @@ router.get("/donor", function (req, res) {
 
 });
 
-// temp facebook
-router.get("/facebook", function (req, res) {
-    res.sendFile("/facebook.html")
+// Route to go to home page
+router.get("/signup", function (req, res) {
+    user.all(function (result) {
+        res.render("signup", {
+        })
+    });
+
 });
 
 // user login
