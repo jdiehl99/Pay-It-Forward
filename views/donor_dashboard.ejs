@@ -1,199 +1,460 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
     <title>Index Title</title>
-    <link rel='stylesheet' href='/assets/css/style.css'/>
+    <link rel='stylesheet' href='/assets/css/style.css' />
     <script src="assets/js/facebook.js"></script>
 </head>
-<body>
-        
-            <nav class="navbar navbar-inverse visible-xs nav-custom">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+<body> -->
+        <div class="container-fluid">                
+    <nav class="navbar navbar-inverse visible-xs nav-custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
                         </button>
-                        <a class="navbar-brand" href="#">Pay it Foward</a>
+                <a class="navbar-brand" href="#">Pay it Foward</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+                    <li><a href="#">  <i class="fa fa-sliders" aria-hidden="true"></i> User Settings</a></li>
+                    <li><a href="#"> <i class="fa fa-sliders" aria-hidden="true"></i> Loan History</a></li>
+                    <li><a href="#" onclick="fbLogout();">  <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav hidden-xs">
+                <h2>Pay it Foward</h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#section1"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+                    <li><a href="#section2"> <i class="fa fa-sliders" aria-hidden="true"></i>  User Settings</a></li>
+                    <li><a href="#section3"> <i class="fa fa-history" aria-hidden="true"></i> Loan History</a></li>
+                    <li><a href="#section3">  <i class="fa fa-sign-out" aria-hidden="true"></i>  Logout</a></li>
+                </ul><br>
+            </div>
+            <br>
+
+            <div class="col-sm-9">
+                <div class="well">
+                    <h4>Welcome
+                        <%=donor[0].first_name %>
+                            <%=donor[0].last_name %>
+                    </h4>
+                    <p>here are you updates!</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <h4>Peope you Helped</h4>
+                            <p>
+                                <%=donor[0].people_helped %>
+                            </p>
+                        </div>
                     </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
-                            <li><a href="#">  <i class="fa fa-sliders" aria-hidden="true"></i> User Settings</a></li>
-                            <li><a href="#"> <i class="fa fa-sliders" aria-hidden="true"></i> Loan History</a></li>
-                            <li><a href="#" onclick="fbLogout();">  <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-                        </ul>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <h4>Amount Donated</h4>
+                            <p>
+                                <%=donor[0].total_money %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <h4>Your Ratings</h4>
+                            <p>
+                                <%=donor[0].ratings %>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        
-            <div class="container-fluid">
-                <div class="row content">
-                    <div class="col-sm-3 sidenav hidden-xs">
-                        <h2>Pay it Foward</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li class="active"><a href="#section1"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
-                            <li><a href="#section2"> <i class="fa fa-sliders" aria-hidden="true"></i>  User Settings</a></li>
-                            <li><a href="#section3"> <i class="fa fa-history" aria-hidden="true"></i> Loan History</a></li>
-                            <li><button id="fbLogOut">  <i class="fa fa-sign-out" aria-hidden="true"></i>  Logout</button></li>
-                        </ul><br>
-                    </div>
-                    <br>
-        
-                    <div class="col-sm-9">
+                <!-- this is the end of row rating -->
+
+
+
+                <!-- <div class="row">
+                    <div class="col-sm-4">
                         <div class="well">
-                            <h4>Welcome <%=donor[0].first_name %> <%=donor[0].last_name %></h4>
-                            <p>here are you updates!</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="well">
-                                    <h4>Peope you Helped</h4>
-                                    <p><%=donor[0].people_helped %></p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="well">
-                                    <h4>Amount Donated</h4>
-                                    <p><%=donor[0].total_money %></p>
-                                </div>
-                            </div>
-                            <!-- <div class="col-sm-3">
-                                <div class="well">
-                                    <h4>Hours Needed</h4>
-                                    <p>10 Million</p>
-                                </div>
-                            </div> -->
-                            <div class="col-sm-4">
-                                <div class="well">
-                                    <h4>Your Ratings</h4>
-                                    <p><%=donor[0].ratings %></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="well">
-                                        <div class="thumbnail">
-                                                <a href="#" target="_blank">
+                            <div class="thumbnail">
+                                <a href="#" target="_blank">
                                           <img src="<%=user[0].user_img %>" alt="Nature" style="width:100%">
                                           <div class="caption">
                                             <p><%=user[0].user_story %></p>
                                           </div>
-                                        </a>
-                                            </div>
-                                </div>
+                                     </a>
                             </div>
-                            <div class="col-sm-4">
-                                <div class="well">
-                                        <div class="thumbnail">
-                                                <a href="#" target="_blank">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <div class="thumbnail">
+                                <a href="#" target="_blank">
                                           <img src="<%=user[1].user_img %>" alt="Nature" style="width:100%">
                                           <div class="caption">
                                             <p><%=user[1].user_story %></p>
                                           </div>
                                         </a>
-                                            </div>
-                                </div>
                             </div>
-                            <div class="col-sm-4">
-                                <div class="well">
-                                    <div class="thumbnail">
-                                            <a href="#" target="_blank">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <div class="thumbnail">
+                                <a href="#" target="_blank">
                                       <img src="<%=user[2].user_img %>" alt="Nature" style="width:100%">
                                       <div class="caption">
                                         <p><%=user[2].user_story %></p>
                                       </div>
                                     </a>
-                                        </div>
                             </div>
                         </div>
-                            <div class="row">
-                            <div class="col-sm-4">
-                                <div class="well">
-                                    <div class="thumbnail">
-                                            <a href="#" target="_blank">
+                    </div>
+
+                </div>
+                this is the end of the row 1
+
+
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <div class="thumbnail">
+                                <a href="#" target="_blank">
                                       <img src="<%=user[3].user_img %>" alt="Nature" style="width:100%">
                                       <div class="caption">
                                         <p><%=user[3].user_story %></p>
                                       </div>
                                     </a>
-                                        </div>
                             </div>
                         </div>
-                                <div class="col-sm-4">
-                                    <div class="well">
-                                        <div class="thumbnail">
-                                                <a href="#" target="_blank">
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <div class="thumbnail">
+                                <a href="#" target="_blank">
                                           <img src="<%=user[4].user_img %>" alt="Nature" style="width:100%">
                                           <div class="caption">
                                             <p><%=user[4].user_story %></p>
                                           </div>
                                         </a>
-                                            </div>
-                                </div>
                             </div>
-                                <div class="col-sm-4">
-                                    <div class="well">
-                                        <div class="thumbnail">
-                                                <a href="#" target="_blank">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <div class="thumbnail">
+                                <a href="#" target="_blank">
                                           <img src="<%=user[5].user_img %>" alt="Nature" style="width:100%">
                                           <div class="caption">
                                             <p><%=user[5].user_story %></p>
                                           </div>
                                         </a>
-                                            </div>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <h2>Charities</h2>
-                                <p>Here are some of the charities that need your help</p>
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Charity Name</th>
-                                            <th>Hour Needed</th>
-                                            <th>Job Requirements</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><%=charity[0].charity_name %></td>
-                                            <td><%=charity[0].hours_needed %></td>
-                                            <td><%=charity[0].overview %></td>
-                                        </tr>
-                                        <tr>
-                                            <td><%=charity[1].charity_name %></td>
-                                            <td><%=charity[1].hours_needed %></td>
-                                            <td><%=charity[1].overview %></td>
-                                        </tr>
-                                        <tr>
-                                            <td><%=charity[2].charity_name %></td>
-                                            <td><%=charity[2].hours_needed %></td>
-                                            <td><%=charity[2].overview %></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-        
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="well">
-                                    <p>Banner here Ad just for you</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="well">
-                                    <p>Banner here Ad just for you</p>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                this is the end of row 2 -->
+
+
+                  <div class="container-fluid hiddenTable">
+                    <h2>Charities</h2>
+                    <p>Here are some of the charities that need your help</p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Charity Name</th>
+                                <th>Hour Needed</th>
+                                <th>Job Requirements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <%=charity[0].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[0].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[0].overview %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%=charity[1].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[1].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[1].overview %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%=charity[2].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[2].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[2].overview %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- this is the end of the chart -->
+
+
+
+                <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                  <div class="thumbnail">
+                                    <img src="<%=user[5].user_img %>" alt="User" class="img-responsive">
+                                    <div class="caption">
+                                      <h4 class="pull-right">$800.99</h4>
+                                      <h4><a href="#"></a>Current Need</a></h4>
+                                      <p><%=user[5].user_story %></p>
+                                    </div>
+                                    <div class="ratings">
+                                      <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                         (15 reviews)
+                                      </p>
+                                    </div>
+                                    <div class="space-ten"></div>
+                                    <div class="btn-ground text-center">
+                                        <!-- <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button> -->
+                                        <button type="button" class="btn btn-primary cool" data-toggle="modal" data-target="#product_view" data-imgsrc="<%=user[5].user_img %>" data-histo="<%=user[5].user_story %>"><i class="fa fa-search"></i> Quick View</button>
+                                    </div>
+                                    <div class="space-ten"></div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="thumbnail">
+                                    <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
+                                    <div class="caption">
+                                      <h4 class="pull-right">$700.99</h4>
+                                      <h4><a href="#">Mobile Product</a></h4>
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <div class="ratings">
+                                      <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                         (15 reviews)
+                                      </p>
+                                    </div>
+                                    <div class="space-ten"></div>
+                                    <div class="btn-ground text-center">
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>
+                                    </div>
+                                    <div class="space-ten"></div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="thumbnail">
+                                    <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
+                                    <div class="caption">
+                                      <h4 class="pull-right">$700.99</h4>
+                                      <h4><a href=  "#">Mobile Product</a></h4>
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <div class="ratings">
+                                      <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                         (15 reviews)
+                                      </p>
+                                    </div>
+                                    <div class="space-ten"></div>
+                                    <div class="btn-ground text-center">
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>
+                                    </div>
+                                    <div class="space-ten"></div>
+                                  </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="modal fade product_view" id="product_view">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                                    <h3 class="modal-title">Please confirm that you would to help</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6 product_img">
+                                            <img id="disPlay" src="http://img.bbystatic.com/BestBuy_US/images/products/5613/5613060_sd.jpg" class="img-responsive">
+                                        </div>
+                                        <div class="col-md-6 product_content">
+                                            <h4>Product Id: <span>51526</span></h4>
+                                            <div class="rating">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                (10 reviews)
+                                            </div>
+                                            <p id="histo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                            <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <select class="form-control" name="select">
+                                                        <option value="" selected="">Color</option>
+                                                        <option value="black">Black</option>
+                                                        <option value="white">White</option>
+                                                        <option value="gold">Gold</option>
+                                                        <option value="rose gold">Rose Gold</option>
+                                                    </select>
+                                                </div>
+                                                <!-- end col -->
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <select class="form-control" name="select">
+                                                        <option value="">Capacity</option>
+                                                        <option value="">16GB</option>
+                                                        <option value="">32GB</option>
+                                                        <option value="">64GB</option>
+                                                        <option value="">128GB</option>
+                                                    </select>
+                                                </div>
+                                                <!-- end col -->
+                                                <div class="col-md-4 col-sm-12">
+                                                    <select class="form-control" name="select">
+                                                        <option value="" selected="">QTY</option>
+                                                        <option value="">1</option>
+                                                        <option value="">2</option>
+                                                        <option value="">3</option>
+                                                    </select>
+                                                </div>
+                                                <!-- end col -->
+                                            </div>
+                                            <div class="space-ten"></div>
+                                            <div class="btn-ground">
+                                                
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                                                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Confirm</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- this the end of container -->
+
+
+
+
+
+
+
+
+
+                <!-- <div class="container">
+                    <h2>Charities</h2>
+                    <p>Here are some of the charities that need your help</p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Charity Name</th>
+                                <th>Hour Needed</th>
+                                <th>Job Requirements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <%=charity[0].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[0].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[0].overview %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%=charity[1].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[1].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[1].overview %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%=charity[2].charity_name %>
+                                </td>
+                                <td>
+                                    <%=charity[2].hours_needed %>
+                                </td>
+                                <td>
+                                    <%=charity[2].overview %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
             </div>
-        
-        </body>
-</html>
+            <!-- this is the end of col-9 -->
+
+
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <p>Banner here Ad just for you</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="well">
+                        <p>Banner here Ad just for you</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        <!-- row content -->
+    </div>
+    <!-- this is the end of container-fluid -->
+
+
+<!-- 
+</body>
+
+</html> -->
