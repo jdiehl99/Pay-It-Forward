@@ -50,25 +50,25 @@
                         <div class="col-sm-3">
                             <div class="well">
                                 <h4>Current Loan</h4>
-                                <p>1 Million</p>
+                                <p><%=user[0].loan_amt %></p>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="well">
                                 <h4>Worked Hours</h4>
-                                <p>100 Million</p>
+                                <p><%=user[0].hours_worked %></p>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="well">
                                 <h4>Hours Needed</h4>
-                                <p>10 Million</p>
+                                <p><%=user[0].hours_needed %></p>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="well">
                                 <h4>Your Ratings</h4>
-                                <p>30%</p>
+                                <p><%=user[0].ratings %></p>
                             </div>
                         </div>
                     </div>
@@ -109,17 +109,17 @@
                                     <tr>
                                         <td><%=charity[0].charity_name %></td>
                                         <td><%=charity[0].hours_needed %></td>
-                                        <td><%=charity[0].job_requirement %></td>
+                                        <td><%=charity[0].overview %></td>
                                     </tr>
                                     <tr>
-                                        <td>Mario's one</td>
-                                        <td>500</td>
-                                        <td>lots of money</td>
+                                        <td><%=charity[1].charity_name %></td>
+                                        <td><%=charity[1].hours_needed %></td>
+                                        <td><%=charity[1].overview %></td>
                                     </tr>
                                     <tr>
-                                        <td>July's sad dogs</td>
-                                        <td>10</td>
-                                        <td>love for ugly dogs</td>
+                                        <td><%=charity[2].charity_name %></td>
+                                        <td><%=charity[2].hours_needed %></td>
+                                        <td><%=charity[2].overview %></td>
                                     </tr>
                                 </tbody>
                             </table>

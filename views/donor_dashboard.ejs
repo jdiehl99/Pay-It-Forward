@@ -50,13 +50,13 @@
                             <div class="col-sm-4">
                                 <div class="well">
                                     <h4>Peope you Helped</h4>
-                                    <p>1 Million</p>
+                                    <p><%=donor[0].people_helped %></p>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="well">
                                     <h4>Amount Donated</h4>
-                                    <p>100 Million</p>
+                                    <p><%=donor[0].total_money %></p>
                                 </div>
                             </div>
                             <!-- <div class="col-sm-3">
@@ -68,7 +68,7 @@
                             <div class="col-sm-4">
                                 <div class="well">
                                     <h4>Your Ratings</h4>
-                                    <p>97%</p>
+                                    <p><%=donor[0].ratings %></p>
                                 </div>
                             </div>
                         </div>
@@ -77,9 +77,9 @@
                                 <div class="well">
                                         <div class="thumbnail">
                                                 <a href="#" target="_blank">
-                                          <img src="https://www.barefootstudent.com/images/bfts_images/130711_44665.jpeg" alt="Nature" style="width:100%">
+                                          <img src="<%=user[0].user_img %>" alt="Nature" style="width:100%">
                                           <div class="caption">
-                                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                                            <p><%=user[0].user_story %></p>
                                           </div>
                                         </a>
                                             </div>
@@ -89,9 +89,9 @@
                                 <div class="well">
                                         <div class="thumbnail">
                                                 <a href="#" target="_blank">
-                                          <img src="https://www.barefootstudent.com/images/bfts_images/130711_44665.jpeg" alt="Nature" style="width:100%">
+                                          <img src="<%=user[1].user_img %>" alt="Nature" style="width:100%">
                                           <div class="caption">
-                                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                                            <p><%=user[1].user_story %></p>
                                           </div>
                                         </a>
                                             </div>
@@ -100,53 +100,52 @@
                             <div class="col-sm-4">
                                 <div class="well">
                                     <div class="thumbnail">
-                                        <a href="#" target="_blank">
-                                  <img src="https://www.barefootstudent.com/images/bfts_images/130711_44665.jpeg" alt="Nature" style="width:100%">
-                                  <div class="caption">
-                                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                  </div>
-                                </a>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row">
-                            <div class="col-sm-4">
-                                    <div class="well">
-                                            <div class="thumbnail">
-                                                    <a href="#" target="_blank">
-                                              <img src="https://www.barefootstudent.com/images/bfts_images/130711_44665.jpeg" alt="Nature" style="width:100%">
-                                              <div class="caption">
-                                                <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                              </div>
-                                            </a>
-                                                </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="well">
-                                            <div class="thumbnail">
-                                                    <a href="#" target="_blank">
-                                              <img src="https://www.barefootstudent.com/images/bfts_images/130711_44665.jpeg" alt="Nature" style="width:100%">
-                                              <div class="caption">
-                                                <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                              </div>
-                                            </a>
-                                                </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="well">
-                                        <div class="thumbnail">
                                             <a href="#" target="_blank">
-                                      <img src="https://www.barefootstudent.com/images/bfts_images/130711_44665.jpeg" alt="Nature" style="width:100%">
+                                      <img src="<%=user[2].user_img %>" alt="Nature" style="width:100%">
                                       <div class="caption">
-                                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                                        <p><%=user[2].user_story %></p>
                                       </div>
                                     </a>
                                         </div>
-                                    </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <div class="thumbnail">
+                                            <a href="#" target="_blank">
+                                      <img src="<%=user[3].user_img %>" alt="Nature" style="width:100%">
+                                      <div class="caption">
+                                        <p><%=user[3].user_story %></p>
+                                      </div>
+                                    </a>
+                                        </div>
+                            </div>
+                        </div>
+                                <div class="col-sm-4">
+                                    <div class="well">
+                                        <div class="thumbnail">
+                                                <a href="#" target="_blank">
+                                          <img src="<%=user[4].user_img %>" alt="Nature" style="width:100%">
+                                          <div class="caption">
+                                            <p><%=user[4].user_story %></p>
+                                          </div>
+                                        </a>
+                                            </div>
                                 </div>
+                            </div>
+                                <div class="col-sm-4">
+                                    <div class="well">
+                                        <div class="thumbnail">
+                                                <a href="#" target="_blank">
+                                          <img src="<%=user[5].user_img %>" alt="Nature" style="width:100%">
+                                          <div class="caption">
+                                            <p><%=user[5].user_story %></p>
+                                          </div>
+                                        </a>
+                                            </div>
+                                </div>
+                            </div>
                             <div class="container">
                                 <h2>Charities</h2>
                                 <p>Here are some of the charities that need your help</p>
@@ -160,19 +159,19 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Johnson & Johnson</td>
-                                            <td>20</td>
-                                            <td>lift 20lb</td>
+                                            <td><%=charity[0].charity_name %></td>
+                                            <td><%=charity[0].hours_needed %></td>
+                                            <td><%=charity[0].overview %></td>
                                         </tr>
                                         <tr>
-                                            <td>Mario's one</td>
-                                            <td>500</td>
-                                            <td>lots of money</td>
+                                            <td><%=charity[1].charity_name %></td>
+                                            <td><%=charity[1].hours_needed %></td>
+                                            <td><%=charity[1].overview %></td>
                                         </tr>
                                         <tr>
-                                            <td>July's sad dogs</td>
-                                            <td>10</td>
-                                            <td>love for ugly dogs</td>
+                                            <td><%=charity[2].charity_name %></td>
+                                            <td><%=charity[2].hours_needed %></td>
+                                            <td><%=charity[2].overview %></td>
                                         </tr>
                                     </tbody>
                                 </table>
