@@ -70,7 +70,7 @@ function fbLogout() {
 
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
- 
+  // $("#fbLog").on("click", function () {
     FB.api('/me', {
       fields: 'name,email,first_name,last_name,picture'
     }, function (response) {
@@ -83,13 +83,7 @@ function testAPI(response) {
         }
       }).then(
         function (data) {
-
-
           console.log("data coming from backend", data);
-
-          
-           
-          
           // Reload the page to get the updated list
           if (data.status === "donor") {
             window.location.href = "/donor/dashboard/" + data.id;
@@ -98,13 +92,12 @@ function testAPI(response) {
           } else { // send to signup page
             window.location.href = "/signup";
           }
-        
-
-      });
+        });
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
       // })
 
     })
+  // });
 }
 
