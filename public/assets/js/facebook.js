@@ -38,7 +38,9 @@ window.fbAsyncInit = function () {
       statusChangeCallback(response);
     }
   });
+
 };
+
 
 // Logout Button
 $("#fbLogOut").on("click", function () {
@@ -67,6 +69,7 @@ function fbLogout() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
+var logInEmail;
 
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
@@ -75,7 +78,7 @@ function testAPI(response) {
       fields: 'name,email,first_name,last_name,picture'
     }, function (response) {
 
-
+      
       $.ajax("/login", {
         type: "POST",
         data: {
@@ -83,12 +86,9 @@ function testAPI(response) {
         }
       }).then(
         function (data) {
-
-
-          console.log("data coming from backend", data);
-
+      
          
-           
+          console.log("data coming from backend", data);
           
           // Reload the page to get the updated list
           if (data.status === "donor") {
@@ -96,12 +96,13 @@ function testAPI(response) {
           } else if (data.status === "user") {
             window.location.href = "/user/dashboard/" + data.id;
           } else { 
-            for (var i = 0; i < 1; i++) {// send to signup page
-            window.location.href = "/signup";
-          }
+            // for (var i = 0; i < 1; i++) {// send to signup page
+              fbLogout();
+            // window.location.href = "/signup";
+          // }
           }
        
-
+      
       });
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
