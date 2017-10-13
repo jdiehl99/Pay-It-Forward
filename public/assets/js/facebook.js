@@ -87,7 +87,7 @@ function testAPI(response) {
 
           console.log("data coming from backend", data);
 
-          for (var i = 0; i < 1; i++) {
+         
            
           
           // Reload the page to get the updated list
@@ -95,10 +95,12 @@ function testAPI(response) {
             window.location.href = "/donor/dashboard/" + data.id;
           } else if (data.status === "user") {
             window.location.href = "/user/dashboard/" + data.id;
-          } else { // send to signup page
+          } else { 
+            for (var i = 0; i < 1; i++) {// send to signup page
             window.location.href = "/signup";
           }
-        }
+          }
+       
 
       });
       // $.post("/login", {email : response.email}, function(data){
