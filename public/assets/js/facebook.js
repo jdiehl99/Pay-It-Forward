@@ -1,10 +1,5 @@
-$( document ).ready(function(){
-
-
-  // $("#fbLog").on("click", function(){
-  //   checkLoginState();
-  // })
-  
+// $( document ).ready(function(){
+ 
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -17,8 +12,7 @@ $( document ).ready(function(){
       testAPI(response);
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      $(".status").html('Please log into this app.');
     }
   }
 
@@ -28,10 +22,15 @@ $( document ).ready(function(){
     });
   }
 
+  $(".fbCheck").on("click", function(){
+    console.log("fbcheck click");
+    checkLoginState();
+  })
+
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '289087048261705',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : false,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.8' // use graph api version 2.8
@@ -78,6 +77,7 @@ $("#fbLogOut").on("click", function(){
   function testAPI(response) {
     console.log('Welcome!  Fetching your information.... ');
     $("#fbLog").on("click", function(){
+      console.log("fblog clicked");
     FB.api('/me', {fields: 'name,email,first_name,last_name,picture'}, function(response) {
      
       console.log(response);
@@ -105,4 +105,4 @@ $("#fbLogOut").on("click", function(){
   }
 
 
-})
+// })
