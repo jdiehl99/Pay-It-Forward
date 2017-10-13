@@ -74,7 +74,17 @@ var logInEmail;
 function testAPI(response) {
   console.log('Welcome 1!  Fetching your information.... ');
  
-   
+  FB.api('/me', {
+    fields: 'name,email,first_name,last_name,picture'
+  }, function (response) {
+
+ 
+    // $.post("/login", {email : response.email}, function(data){
+    //   console.log(data);
+    // })
+
+  }) 
+
 }
 
 $("#loginNow").on("click", function(){
