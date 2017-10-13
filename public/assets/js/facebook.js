@@ -83,7 +83,13 @@ function testAPI(response) {
         }
       }).then(
         function (data) {
+
+
           console.log("data coming from backend", data);
+
+          for (var i = 0; i < 1; i++) {
+           
+          
           // Reload the page to get the updated list
           if (data.status === "donor") {
             window.location.href = "/donor/dashboard/" + data.id;
@@ -92,7 +98,9 @@ function testAPI(response) {
           } else { // send to signup page
             window.location.href = "/signup";
           }
-        });
+        }
+
+      });
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
       // })
