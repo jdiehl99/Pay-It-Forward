@@ -1,9 +1,9 @@
 $( document ).ready(function(){
 
 
-  $("#fbLog").on("click", function(){
-    checkLoginState();
-  })
+  // $("#fbLog").on("click", function(){
+  //   checkLoginState();
+  // })
   
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -52,7 +52,7 @@ $( document ).ready(function(){
 $("#fbLogOut").on("click", function(){
   fbLogout();
 
-  window.location.href = "/signup";
+  window.location.href = "/";
 });
 
   function fbLogout() {
