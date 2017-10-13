@@ -1,5 +1,5 @@
 
-
+function test1(){
 
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
@@ -106,4 +106,5 @@ function testAPI(response) {
      
     })
   // });
+}
 }
