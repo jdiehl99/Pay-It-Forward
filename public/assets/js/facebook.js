@@ -1,10 +1,4 @@
-function onLoad1(){
 
-
-$("#fbLog").on("click", function () {
-
-
-  checkLoginState();
 
 
 function statusChangeCallback(response) {
@@ -112,7 +106,4 @@ function testAPI(response) {
      
     })
   // });
-}
-
-});
 }
