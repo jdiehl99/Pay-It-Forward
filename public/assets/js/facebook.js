@@ -68,6 +68,8 @@ function fbLogout() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
+
+var loginRedirect;
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
   
@@ -75,27 +77,9 @@ function testAPI(response) {
       fields: 'name,email,first_name,last_name,picture'
     }, function (response) {
 
-      $.ajax("/login", {
-        type: "POST",
-        data: {
-          email: response.email
-        }
-      }).then(
-        function (data) {
-          console.log("data coming from backend", data);
-          // Reload the page to get the updated list
-          if (data.status === "donor") {
-            window.location.href = "/donor/dashboard/" + data.id;
-          } else if (data.status === "user") {
-            window.location.href = "/user/dashboard/" + data.id;
-          } else { // send to signup page
-            for (var i = 0; i < 1; i++) {
-              window.location.href = "/signup";
-              
-            }
-            
-          }
-        });
+
+      loginRedirect += response;
+     
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
      
@@ -103,4 +87,26 @@ function testAPI(response) {
   // });
 }
 
+console.log("hrt", loginRedirect);
+// $.ajax("/login", {
+//   type: "POST",
+//   data: {
+//     email: response.email
+//   }
+// }).then(
+//   function (data) {
+//     console.log("data coming from backend", data);
+//     // Reload the page to get the updated list
+//     if (data.status === "donor") {
+//       window.location.href = "/donor/dashboard/" + data.id;
+//     } else if (data.status === "user") {
+//       window.location.href = "/user/dashboard/" + data.id;
+//     } else { // send to signup page
+//       for (var i = 0; i < 1; i++) {
+//         window.location.href = "/signup";
+        
+//       }
+      
+//     }
+//   });
 
