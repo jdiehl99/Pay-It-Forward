@@ -1,9 +1,31 @@
-$( document ).ready(function(){
-  
-  
-    $("#fbLog").on("click", function(){
-      checkLoginState();
-    })
+
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1440200726070603',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+   FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+
 
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
@@ -28,31 +50,12 @@ function checkLoginState() {
   });
 }
 
-window.fbAsyncInit = function () {
-
-  FB.init({
-    appId: '1440200726070603',
-    cookie: true, // enable cookies to allow the server to access 
-    // the session
-    xfbml: true, // parse social plugins on this page
-    version: 'v2.10' // use graph api version 2.8
-  });
-  // 289087048261705
-  FB.getLoginStatus(function (response) {
-    if (response == "connected") {
-      FB.logout();
-    } else {
-      statusChangeCallback(response);
-    }
-  });
-};
-
 // Logout Button
-$("#fbLogOut").on("click", function () {
-  fbLogout();
+// $("#fbLogOut").on("click", function () {
+//   fbLogout();
 
-  window.location.href = "/signup";
-});
+//   window.location.href = "/signup";
+// });
 
 function fbLogout() {
   FB.getLoginStatus(function (response) {
@@ -63,16 +66,6 @@ function fbLogout() {
     }
   });
 }
-
-
-(function (d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
 
 
 function testAPI(response) {
@@ -108,4 +101,3 @@ function testAPI(response) {
   // });
 }
 
-})
