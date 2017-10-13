@@ -26,7 +26,7 @@ window.fbAsyncInit = function () {
 
   FB.init({
     appId: '1440200726070603',
-    cookie: false, // enable cookies to allow the server to access 
+    // enable cookies to allow the server to access 
     // the session
     xfbml: true, // parse social plugins on this page
     version: 'v2.10' // use graph api version 2.8
@@ -68,8 +68,6 @@ function fbLogout() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-var response;
-
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
   
@@ -77,16 +75,7 @@ function testAPI(response) {
       fields: 'name,email,first_name,last_name,picture'
     }, function (response) {
 
-
-      // $.post("/login", {email : response.email}, function(data){
-      //   console.log(data);
-     
-    })
-  // });
-}
-
-
- $.ajax("/login", {
+      $.ajax("/login", {
         type: "POST",
         data: {
           email: response.email
@@ -107,3 +96,11 @@ function testAPI(response) {
             
           }
         });
+      // $.post("/login", {email : response.email}, function(data){
+      //   console.log(data);
+     
+    })
+  // });
+}
+
+
