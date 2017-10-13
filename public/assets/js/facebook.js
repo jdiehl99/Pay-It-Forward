@@ -25,7 +25,7 @@ window.fbAsyncInit = function () {
 
   FB.init({
     appId: '1440200726070603',
-    cookie: true, // enable cookies to allow the server to access 
+    // cookie: true, // enable cookies to allow the server to access 
     // the session
     xfbml: true, // parse social plugins on this page
     version: 'v2.10' // use graph api version 2.8
@@ -70,7 +70,7 @@ function fbLogout() {
 
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
-  $("#fbLog").on("click", function () {
+ 
     FB.api('/me', {
       fields: 'name,email,first_name,last_name,picture'
     }, function (response) {
@@ -98,5 +98,4 @@ function testAPI(response) {
       // })
 
     })
-  });
 }
