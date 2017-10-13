@@ -82,12 +82,12 @@ function testAPI(response) {
      
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
-     
+      console.log("hrt", loginRedirect);
     })
   // });
 }
 
-console.log("hrt", loginRedirect);
+
 // $.ajax("/login", {
 //   type: "POST",
 //   data: {
