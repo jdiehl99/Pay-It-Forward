@@ -156,9 +156,9 @@
                                 function (data) {
                                     console.log("data coming from backend", data);
                                     // Reload the page to get the updated list
-                                    if (data.status === "user") {
-                                        window.location.href = "/user/dashboard/"+data.id;
-                                      }
+                                      if (data.status === "donor") {
+                                        window.location.href = "/donor/dashboard/" + data.id;
+                                    } 
                                 });
                         });
                 }
@@ -206,9 +206,9 @@
                                 function (data) {
                                     console.log("data coming from backend", data);
                                     // Reload the page to get the updated list
-                                    if (data.status === "donor") {
-                                        window.location.href = "/donor/dashboard/" + data.id;
-                                    } 
+                                    if (data.status === "user") {
+                                        window.location.href = "/user/dashboard/"+data.id;
+                                      }
                                 });
                         });
 
