@@ -1,3 +1,4 @@
+$("#fbLog").on("click", function () {
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
@@ -83,7 +84,6 @@ function testAPI(response) {
         }
       }).then(
         function (data) {
-          $("#fbLog").on("click", function () {
           console.log("data coming from backend", data);
           // Reload the page to get the updated list
           if (data.status === "donor") {
@@ -98,10 +98,11 @@ function testAPI(response) {
             
           }
         });
-        });
+
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
      
     })
   // });
 }
+});
