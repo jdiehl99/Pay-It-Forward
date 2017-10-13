@@ -72,6 +72,15 @@ function fbLogout() {
 var logInEmail;
 
 function testAPI(response) {
+  console.log('Welcome 1!  Fetching your information.... ');
+ 
+   
+}
+
+$("#loginNow").on("click", function(){
+
+
+function testAPI2(response) {
   console.log('Welcome!  Fetching your information.... ');
  
     FB.api('/me', {
@@ -108,6 +117,7 @@ function testAPI(response) {
       //   console.log(data);
       // })
 
-    })
+    }) 
 }
+})
 
