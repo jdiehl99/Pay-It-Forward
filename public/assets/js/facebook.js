@@ -1,3 +1,10 @@
+$( document ).ready(function(){
+  
+  
+    $("#fbLog").on("click", function(){
+      checkLoginState();
+    })
+
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
@@ -101,3 +108,4 @@ function testAPI(response) {
   // });
 }
 
+})
