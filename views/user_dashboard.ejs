@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="space-ten"></div>
                                 <div class="btn-ground text-center">
-                <button type="button" class="btn btn-primary" onclick="userModal(<iframe width='100%' height='260' src='https://www.youtube.com/embed/CumDJZWJtZg' frameborder='0' allowfullscreen></iframe>,'<%=charity[0].overview %>','<%=charity[0].hours_needed %>','<%=charity[0].charity_name %>')" data-toggle="modal" data-target="#product_view" >
+                <button type="button" class="btn btn-primary" onclick="userModal('https://www.youtube.com/embed/CumDJZWJtZg','<%=charity[0].overview %>','<%=charity[0].hours_needed %>','<%=charity[0].charity_name %>')" data-toggle="modal" data-target="#product_view" >
                 <i class="fa fa-search"></i>Learn More </button>
                                 </div>
                                 <div class="space-ten"></div>
@@ -127,7 +127,7 @@
                                     </div>
                                     <div class="space-ten"></div>
                                     <div class="btn-ground text-center">
-                    <button type="button" class="btn btn-primary" onclick="userModal(<iframe width='100%' height='260' src='https://www.youtube.com/embed/hp-T8X0eWlc' frameborder='0' allowfullscreen></iframe>,'<%=charity[1].overview %>','<%=charity[1].hours_needed %>','<%=charity[1].charity_name %>')" data-toggle="modal" data-target="#product_view" >
+                    <button type="button" class="btn btn-primary" onclick="userModal('https://www.youtube.com/embed/hp-T8X0eWlc','<%=charity[1].overview %>','<%=charity[1].hours_needed %>','<%=charity[1].charity_name %>')" data-toggle="modal" data-target="#product_view" >
                     <i class="fa fa-search"></i>Learn More </button>
                                     </div>
                                     <div class="space-ten"></div>
@@ -161,7 +161,7 @@
                                         </div>
                                         <div class="space-ten"></div>
                                         <div class="btn-ground text-center">
-                        <button type="button" class="btn btn-primary" onclick="userModal(<iframe width='100%' height='260' src='https://www.youtube.com/embed/d7SBoE-9o_E' frameborder='0' allowfullscreen></iframe>,'<%=charity[2].overview %>','<%=charity[2].hours_needed %>','<%=charity[2].charity_name %>')" data-toggle="modal" data-target="#product_view" >
+                        <button type="button" class="btn btn-primary" onclick="userModal('https://www.youtube.com/embed/d7SBoE-9o_E','<%=charity[2].overview %>','<%=charity[2].hours_needed %>','<%=charity[2].charity_name %>')" data-toggle="modal" data-target="#product_view" >
                         <i class="fa fa-search"></i>Learn More </button>
                                         </div>
                                         <div class="space-ten"></div>
@@ -198,7 +198,7 @@
                                         </div>
                                         <div class="space-ten"></div>
                                         <div class="btn-ground text-center">
-                        <button type="button" class="btn btn-primary" onclick="userModal(<iframe width='100%' height='260' src='https://www.youtube.com/embed/bNWh8JUXs20' frameborder='0' allowfullscreen></iframe>,'<%=charity[3].overview %>','<%=charity[3].hours_needed %>','<%=charity[3].charity_name %>')" data-toggle="modal" data-target="#product_view" >
+                        <button type="button" class="btn btn-primary" onclick="userModal('https://www.youtube.com/embed/bNWh8JUXs20','<%=charity[3].overview %>','<%=charity[3].hours_needed %>','<%=charity[3].charity_name %>')" data-toggle="modal" data-target="#product_view" >
                         <i class="fa fa-search"></i>Learn More </button>
                                         </div>
                                         <div class="space-ten"></div>
@@ -230,7 +230,7 @@
                                             </div>
                                             <div class="space-ten"></div>
                                             <div class="btn-ground text-center">
-                            <button type="button" class="btn btn-primary" onclick="userModal(<iframe width='100%' height='260' src='https://www.youtube.com/embed/77yI_5GTzzc' frameborder='0' allowfullscreen></iframe>,'<%=charity[4].overview %>','<%=charity[4].hours_needed %>','<%=charity[4].charity_name %>')" data-toggle="modal" data-target="#product_view" >
+                            <button type="button" class="btn btn-primary" onclick="userModal('https://www.youtube.com/embed/77yI_5GTzzc','<%=charity[4].overview %>','<%=charity[4].hours_needed %>','<%=charity[4].charity_name %>')" data-toggle="modal" data-target="#product_view" >
                             <i class="fa fa-search"></i>Learn More </button>
                                             </div>
                                             <div class="space-ten"></div>
@@ -262,7 +262,7 @@
                                                 </div>
                                                 <div class="space-ten"></div>
                                                 <div class="btn-ground text-center">
-                                <button type="button" class="btn btn-primary" onclick="userModal(<iframe width='100%' height='260' src='https://www.youtube.com/embed/qYyH2kMIoM0' frameborder='0' allowfullscreen></iframe>,'<%=charity[5].overview %>','<%=charity[5].hours_needed %>','<%=charity[5].charity_name %>')" data-toggle="modal" data-target="#product_view" >
+                                <button type="button" class="btn btn-primary" onclick="userModal('https://www.youtube.com/embed/qYyH2kMIoM0','<%=charity[5].overview %>','<%=charity[5].hours_needed %>','<%=charity[5].charity_name %>')" data-toggle="modal" data-target="#product_view" >
                                 <i class="fa fa-search"></i>Learn More </button>
                                                 </div>
                                                 <div class="space-ten"></div>
@@ -321,8 +321,62 @@
                     </div>
               <!-- this is the end of container-fluid for the charities -->
 
-
                 </div> <!-- end of big row-->
+
+
+                <div class="modal fade product_view" id="product_view">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                                    <h3 class="modal-title">Please confirm that you would like to volunteer</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6 product_img">
+                                                <iframe class="frame" width="100%" height="260" src="#" frameborder="0" allowfullscreen></iframe>
+                                            <!-- <img id="disPlay" src="#" class="img-responsive"> -->
+                                        </div>
+                                        <div class="col-md-6 product_content">
+                                            <div class="rating">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span> 
+                                                (4900 reviews)
+                                            </div>
+                                            <div class="charNam"></div>
+                                            <p id="overView"></p>
+                                            Current hour/s Need<h3><span class="hours"> 75.00 </span>hrs</h3>                                            
+                                            <div class="row">
+                                                <!-- end col -->
+                                                <div class="col-md-4 col-sm-12">
+                                                    <select class="form-control" name="select">
+                                                   <option value="" selected="">Hours to Volunteer</option>
+                                                   <option value="">Take all Aval. hours</option>
+                                                    <option value="">4hrs</option>
+                                                  <option value="">8hrs</option>
+                                                    </select>
+                                                </div>
+                                                <!-- end col -->
+                                            </div>
+                                            <div class="space-ten"></div>
+                                            <div class="btn-ground">
+        
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+                                                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Confirm</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- this the end of container -->
+
+
 
             </div> <!--end of col-9-->
 

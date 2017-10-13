@@ -1,7 +1,9 @@
-function userModal(srcImg,hist,loanAmt){
+function userModal(srcImg,hist,hrNeed,charName){
     
-          $("#disPlay").attr("src", srcImg)
-          $(".cost").text(hist);
-          $("histo").text(hist);
+          
+          $(".frame").attr("src", srcImg);
+          $(".hours").text(hrNeed);
+          $("#overView").text(hist);
+          $(".charNam").text(charName);
           
     }
