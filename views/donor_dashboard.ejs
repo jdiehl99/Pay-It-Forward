@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav hidden-xs">
-            <h2>Pay it Foward</h2>
+            <h2>Pay it Forward</h2>
             <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a href="#section1"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
                 <li><a href="#section2"> <i class="fa fa-sliders" aria-hidden="true"></i>  User Settings</a></li>
@@ -36,9 +36,9 @@
 
         <div class="col-sm-9">
             <div class="well">
-                <h4>Welcome
+                <h4>Hello
                     <%=donor[0].first_name %>
-                        <%=donor[0].last_name %>
+                        <%=donor[0].last_name %>!
                 </h4>
                  <p>Welcome to our newest charity: Second Harvest Food Bank</p>
             </div>
@@ -128,15 +128,15 @@
 
                     <div class="col-md-4">
                         <div class="thumbnail">
-                            <img src="<%=user[0].user_img %>" alt="User" class="img-responsive">
+                            <img src="<%=user[5].user_img %>" alt="User" class="img-responsive">
                             <div class="caption">
                                 <h4 class="pull-right">
-                                    <%=user[0].loan_amt %>
+                                    $<%=user[5].loan_amt %>.00
                                 </h4>
                                 <h4>Current Need
                                 </h4>
                                 <p>
-                                    <%=user[0].user_story %>
+                                    <%=user[5].user_story %>
                                 </p>
                             </div>
                             <div class="ratings">
@@ -151,9 +151,9 @@
                             </div>
                             <div class="space-ten"></div>
                             <div class="btn-ground text-center">
-                                <button type="button" class="btn btn-primary cool" onclick="youModal('<%=user[0].user_img %>','<%=user[0].user_story %>','<%=user[0].loan_amt %>')"
-                                    data-toggle="modal" data-target="#product_view" data-loan="<%=user[0].loan_amt %>" data-imgsrc="<%=user[0].user_img %>"
-                                    data-histo="<%=user[0].user_story %>"><i class="fa fa-search"></i>Learn More</button>
+                                <button type="button" class="btn btn-primary cool" onclick="youModal('<%=user[5].user_img %>','<%=user[5].user_story %>','<%=user[5].loan_amt %>')"
+                                    data-toggle="modal" data-target="#product_view" data-loan="<%=user[5].loan_amt %>" data-imgsrc="<%=user[5].user_img %>"
+                                    data-histo="<%=user[5].user_story %>"><i class="fa fa-search"></i>Learn More</button>
                             </div>
                             <div class="space-ten"></div>
                         </div>
@@ -164,7 +164,7 @@
                             <img src="<%=user[1].user_img %>" alt="usr" class="img-responsive">
                             <div class="caption">
                                 <h4 class="pull-right">
-                                    <%=user[1].loan_amt %>
+                                    $<%=user[1].loan_amt %>.00
                                 </h4>
                                 <h4>Current Need</a>
                                 <p>
@@ -194,7 +194,7 @@
                             <img src="<%=user[2].user_img %>" alt="" class="img-responsive">
                             <div class="caption">
                                 <h4 class="pull-right">
-                                    <%=user[2].loan_amt %>
+                                    $<%=user[2].loan_amt %>.00
                                 </h4>
                                 <h4>Current Need</h4>
                                 <p>
