@@ -1,11 +1,10 @@
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
-    /* color: #f5f6f7; */
 }
 
 p {
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 .margin {
@@ -13,7 +12,7 @@ p {
 }
 
 .fb-login-button {
-     margin-top: 12px;
+     /* margin-top: 12px; */
 }
 
 .bg-1 {
@@ -101,6 +100,9 @@ color: #673ab7;
     right: 0;
     left: 0;
     z-index: 1030;
+}
+#welcome{
+    padding: 5px;
 }
 
  /* this the end of css home */
