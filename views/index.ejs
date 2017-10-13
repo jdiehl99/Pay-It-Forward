@@ -1,4 +1,86 @@
 <!-- Navbar -->
+
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1440200726070603',
+            // cookie     : true,
+            xfbml: true,
+            version: 'v2.10'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+            console.log("jfhfhf", response.email);
+        });
+    }
+
+
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI(response);
+        } else {
+            // The person is not logged into your app or we are unable to tell.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+        }
+    }
+
+    function testAPI(response) {
+        console.log('Welcome!  Fetching your information.... ');
+        // $("#fbLog").on("click", function () {
+        FB.api('/me', {
+            fields: 'name,email,first_name,last_name,picture'
+        }, function (response) {
+
+            console.log(response.email);
+            $.ajax("/login", {
+                type: "POST",
+                data: {
+                    email: response.email
+                }
+            }).then(
+                function (data) {
+                    console.log("data coming from backend", data);
+                    // Reload the page to get the updated list
+                    if (data.status === "donor") {
+                        window.location.href = "/donor/dashboard/" + data.id;
+                    } else if (data.status === "user") {
+                        window.location.href = "/user/dashboard/" + data.id;
+                    } else { // send to signup page
+                        window.location.href = "/signup";
+                    }
+                });
+
+        })
+        // });
+    }
+</script>
+
 <nav class="navbar navbar-default fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -10,11 +92,12 @@
             <a class="navbar-brand btn" href="/signup">
  <i class="fa fa-user-plus" aria-hidden="true"></i>SignUp</a>
 
- <a class="navbar-brand btn" href="#">
-    <i class="fa fa-sign-in" aria-hidden="true" onclick="checkLoginState();"></i>Login</a>
- <!-- <button id="fbLog" class="navbar-brand fbCheck" scope="public_profile,email">
-    <i class="fa fa-sign-in" aria-hidden="true" onclick="checkLoginState();"></i> LogIn </button> -->
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
         </div>
+
+
+
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li>Welcome to Pay It Foward !</li>
@@ -23,7 +106,7 @@
     </div>
 </nav>
 <div id="status">
-    </div>
+</div>
 <!-- First Container -->
 <div class="container-fluid cont bg-1 text-center">
     <h3 class="margin">Who we are...</h3>
