@@ -76,23 +76,23 @@ function testAPI(response) {
     }, function (response) {
 
 
-      // $.ajax("/login", {
-      //   type: "POST",
-      //   data: {
-      //     email: response.email
-      //   }
-      // }).then(
-      //   function (data) {
-      //     console.log("data coming from backend", data);
-      //     // Reload the page to get the updated list
-      //     if (data.status === "donor") {
-      //       window.location.href = "/donor/dashboard/" + data.id;
-      //     } else if (data.status === "user") {
-      //       window.location.href = "/user/dashboard/" + data.id;
-      //     } else { // send to signup page
-      //       window.location.href = "/signup";
-      //     }
-      //   });
+      $.ajax("/login", {
+        type: "POST",
+        data: {
+          email: response.email
+        }
+      }).then(
+        function (data) {
+          console.log("data coming from backend", data);
+          // Reload the page to get the updated list
+          if (data.status === "donor") {
+            window.location.href = "/donor/dashboard/" + data.id;
+          } else if (data.status === "user") {
+            window.location.href = "/user/dashboard/" + data.id;
+          } else { // send to signup page
+            window.location.href = "/signup";
+          }
+        });
       // $.post("/login", {email : response.email}, function(data){
       //   console.log(data);
       // })
