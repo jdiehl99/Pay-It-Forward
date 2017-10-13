@@ -1,4 +1,3 @@
-
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
@@ -26,7 +25,7 @@ window.fbAsyncInit = function () {
 
   FB.init({
     appId: '1440200726070603',
-    cookie: true,// enable cookies to allow the server to access 
+    cookie: true, // enable cookies to allow the server to access 
     // the session
     xfbml: true, // parse social plugins on this page
     version: 'v2.10' // use graph api version 2.8
@@ -45,7 +44,7 @@ window.fbAsyncInit = function () {
 $("#fbLogOut").on("click", function () {
   fbLogout();
 
-  window.location.href = "/";
+  window.location.href = "/signup";
 });
 
 function fbLogout() {
@@ -71,37 +70,33 @@ function fbLogout() {
 
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
-  
+  $("#fbLog").on("click", function () {
     FB.api('/me', {
       fields: 'name,email,first_name,last_name,picture'
     }, function (response) {
 
 
-  
+      $.ajax("/login", {
+        type: "POST",
+        data: {
+          email: response.email
+        }
+      }).then(
+        function (data) {
+          console.log("data coming from backend", data);
+          // Reload the page to get the updated list
+          if (data.status === "donor") {
+            window.location.href = "/donor/dashboard/" + data.id;
+          } else if (data.status === "user") {
+            window.location.href = "/user/dashboard/" + data.id;
+          } else { // send to signup page
+            window.location.href = "/signup";
+          }
+        });
+      // $.post("/login", {email : response.email}, function(data){
+      //   console.log(data);
+      // })
+
     })
-  // });
+  });
 }
-
-
-// $.ajax("/login", {
-//   type: "POST",
-//   data: {
-//     email: response.email
-//   }
-// }).then(
-//   function (data) {
-//     console.log("data coming from backend", data);
-//     // Reload the page to get the updated list
-//     if (data.status === "donor") {
-//       window.location.href = "/donor/dashboard/" + data.id;
-//     } else if (data.status === "user") {
-//       window.location.href = "/user/dashboard/" + data.id;
-//     } else { // send to signup page
-//       for (var i = 0; i < 1; i++) {
-//         window.location.href = "/signup";
-        
-//       }
-      
-//     }
-//   });
-
