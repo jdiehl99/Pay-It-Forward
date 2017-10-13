@@ -12,6 +12,10 @@ p {
     margin-bottom: 45px;
 }
 
+#fbLog {
+     background-color: Transparent;
+}
+
 .bg-1 {
     background-image: url("https://205eev2oa0jm1t4yb914s1nw-wpengine.netdna-ssl.com/wp-content/uploads/2015/10/UMTBanner2.jpg");
     background-repeat: no-repeat;
