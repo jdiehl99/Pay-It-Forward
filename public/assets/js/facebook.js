@@ -1,6 +1,4 @@
 
-function test1(){
-
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
@@ -47,7 +45,7 @@ window.fbAsyncInit = function () {
 $("#fbLogOut").on("click", function () {
   fbLogout();
 
-  window.location.href = "/signup";
+  window.location.href = "/";
 });
 
 function fbLogout() {
@@ -70,6 +68,7 @@ function fbLogout() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
+var response;
 
 function testAPI(response) {
   console.log('Welcome!  Fetching your information.... ');
@@ -79,7 +78,15 @@ function testAPI(response) {
     }, function (response) {
 
 
-      $.ajax("/login", {
+      // $.post("/login", {email : response.email}, function(data){
+      //   console.log(data);
+     
+    })
+  // });
+}
+
+
+ $.ajax("/login", {
         type: "POST",
         data: {
           email: response.email
@@ -100,11 +107,3 @@ function testAPI(response) {
             
           }
         });
-
-      // $.post("/login", {email : response.email}, function(data){
-      //   console.log(data);
-     
-    })
-  // });
-}
-}
