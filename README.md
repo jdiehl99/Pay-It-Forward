@@ -1,3 +1,5 @@
+__This app is in continued development.  To stay up to date on our progress, please star this repo or reach out to one of the collaborators directly__
+
 # Pay It Forward
 
 Matching donors with recipients who will in turn volunteer at a charity in exchange for the support. Built using node, express, EJS, Bootstrap, HTML5, mySQL, and deployed at Heroku.  Developed as mobile responsive.
