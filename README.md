@@ -1,4 +1,4 @@
-__This app is in continued development.  To stay up to date on our progress, please star this repo or reach out to one of the collaborators directly__
+_This app is in continued development.  To stay up to date on our progress, please star this repo or reach out to one of the collaborators directly_
 
 # Pay It Forward
 
